@@ -62,4 +62,16 @@ extension Antioch {
         }
     }
     
+    public func chartsForGenre(genre: AppleMusicGenre, types: [IncludeParameter], limit: Int, completion: DataCompletion<ChartResponse>) {
+        let request = AntiochRequest(endPoint: CatalogRouter.chartsForGenre(genre, types, limit), method: .get)
+        performRequest(request: request, forResponseType: ChartResponse.self) { result in
+            switch result {
+            case .success(let response):
+                completion?(response?.results, nil)
+            case .failure(let error):
+                completion?(nil, error)
+            }
+        }
+    }
+    
 }

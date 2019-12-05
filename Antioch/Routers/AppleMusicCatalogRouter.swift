@@ -1,21 +1,15 @@
-//
-//  AppleMusicCatalogRouter.swift
-//  AppleMusicFrameworkTest
-//
-//  Created by Stephen Bodnar on 8/19/19.
-//  Copyright © 2019 Stephen Bodnar. All rights reserved.
-//
-
-import Foundation
-
 public enum CatalogRouter: Provider {
     
     /// get a catalog playlist, album, song, or artist
     case getCatalogResource(CatalogQueryable.Type, String)
     case getMultipleCatalogResources(CatalogQueryable.Type, [String]) // string is array of ids
     
-    case charts([IncludeParameter], Int) // types, limit, offset
+    /// string value is the storefront. Used so you can retrieve different countries' charts
+    case charts([IncludeParameter], Int, String = Antioch.shared.storeFront) // types, limit, offset, storeFront
   
+    /// Get charts for a specific genre
+    case chartsForGenre(AppleMusicGenre, [IncludeParameter], Int) // genre, types, limit
+    
     public var path: String {
         switch self {
         case .getCatalogResource(let resource, let id):
@@ -23,9 +17,13 @@ public enum CatalogRouter: Provider {
         case .getMultipleCatalogResources(let resource, let ids):
             let joinedIds = ids.joined(separator: ",") // of syntax id1,id2,id3 etc
             return "\(baseURL)\(getResourcePath(for: resource))?ids=\(joinedIds)"
-        case .charts(let types, let limit):
+        case .charts(let types, let limit, let storeFront):
             let allTypes = types.asString()
-            return "\(baseURL)charts?types=\(allTypes)&limit=\(limit)"
+            let base = "\(RoutingConstants.appleMusicBaseURL)/catalog/\(storeFront)/"
+            return "\(base)charts?types=\(allTypes)&limit=\(limit)"
+        case .chartsForGenre(let genre, let types, let limit):
+            let types = types.asString()
+            return "\(baseURL)charts?types=\(types)&genre=\(genre.id)&limit=\(limit)"
         }
     }
     

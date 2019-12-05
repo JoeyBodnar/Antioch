@@ -47,6 +47,7 @@
 		9F2203832391642E00C11F47 /* Antioch-Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F22037E2391642E00C11F47 /* Antioch-Search.swift */; };
 		9F2203872391643F00C11F47 /* Antioch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2203852391643F00C11F47 /* Antioch.swift */; };
 		9F2203882391643F00C11F47 /* AntiochRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2203862391643F00C11F47 /* AntiochRequest.swift */; };
+		9F305B1F23990C0500ADE6A4 /* AppleMusicGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F305B1E23990C0500ADE6A4 /* AppleMusicGenre.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		9F22037E2391642E00C11F47 /* Antioch-Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Antioch-Search.swift"; sourceTree = "<group>"; };
 		9F2203852391643F00C11F47 /* Antioch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Antioch.swift; sourceTree = "<group>"; };
 		9F2203862391643F00C11F47 /* AntiochRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntiochRequest.swift; sourceTree = "<group>"; };
+		9F305B1E23990C0500ADE6A4 /* AppleMusicGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicGenre.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				9F22033E239163E200C11F47 /* Chart.swift */,
 				9F22034D239163E200C11F47 /* SearchResults.swift */,
 				9F220348239163E200C11F47 /* SearchHints.swift */,
+				9F305B1E23990C0500ADE6A4 /* AppleMusicGenre.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				9F220359239163E200C11F47 /* AppleMusicItemType.swift in Sources */,
 				9F220364239163E200C11F47 /* SearchResults.swift in Sources */,
 				9F220361239163E200C11F47 /* LibraryArtist.swift in Sources */,
+				9F305B1F23990C0500ADE6A4 /* AppleMusicGenre.swift in Sources */,
 				9F220363239163E200C11F47 /* AppleMusicError.swift in Sources */,
 				9F22034F239163E200C11F47 /* Rating.swift in Sources */,
 				9F22035C239163E200C11F47 /* Artwork.swift in Sources */,
