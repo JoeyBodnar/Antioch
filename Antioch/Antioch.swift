@@ -28,7 +28,7 @@ public class Antioch {
     }
     
     /// The storefront for user-specific requests. Default is "us"
-    public var storeFront = ""
+    public var storeFront = "us"
     
     public var authenticationHeader: String?
     public var musicUserToken: String?
@@ -40,9 +40,15 @@ public class Antioch {
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 500
             if statusCode >= 400 {
-                let decoder = JSONDecoder()
                 do {
-                    let error = try decoder.decode(AppleMusicError.self, from: data!)
+                    guard let unwrappedData = data else {
+                        let unwrappedError = error ?? UnknownAntiochError(message: "Error retrieving data. Could not retrieve data task error. Status code: \(statusCode)")
+                        completion?(false, unwrappedError)
+                        return
+                    }
+                    
+                    let decoder = JSONDecoder()
+                    let error = try decoder.decode(AppleMusicError.self, from: unwrappedData)
                     completion?(false, error)
                 } catch {
                     completion?(false, nil)
@@ -59,8 +65,15 @@ public class Antioch {
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             do {
+                guard let unwrappedData = data else {
+                    let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 500
+                    let unwrappedError = error ?? UnknownAntiochError(message: "Error retrieving data. Could not retrieve data task error. Status code: \(statusCode)")
+                    completion?(.failure(unwrappedError))
+                    return
+                }
+                
                 let decoder = JSONDecoder()
-                let results = try decoder.decode(ResponseRoot<T>.self, from: data!)
+                let results = try decoder.decode(ResponseRoot<T>.self, from: unwrappedData)
 
                 if let error = results.errors?.first {
                     completion?(.failure(error))
@@ -68,7 +81,7 @@ public class Antioch {
                     completion?(.success(results))
                 }
             } catch let error {
-                print("error is \(error)")
+                print("Antioch error:: error for request \(request), with error: \(error)")
                 completion?(.failure(error))
             }
         }

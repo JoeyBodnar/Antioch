@@ -16,7 +16,7 @@ extension Antioch {
             completion?(song, error)
         }
     }
-    
+    /// Get a catalog playlist from the Apple Music catalog by its id
     public func catalogPlaylist(forId id: String, completion: DataCompletion<CatalogPlaylist>) {
         catalogItem(forId: id, ofType: CatalogPlaylist.self) { playlist, error in
             completion?(playlist, error)
@@ -36,7 +36,7 @@ extension Antioch {
         }
     }
     
-    /// Pass in an array of ids and their type, and  get the  catalog items
+    /// Pass in an array of ids and their type, and  get the  catalog items.
     public func catalogItems<T: Decodable & CatalogQueryable>(forIds ids: [String], ofType type: T.Type, completion: CollectionDataCompletion<T>) {
         let request = AntiochRequest(endPoint: CatalogRouter.getMultipleCatalogResources(type, ids), method: .get)
         performRequest(request: request, forResponseType: type) { (result) in
@@ -49,7 +49,7 @@ extension Antioch {
         }
     }
     
-    /// Valid types are songs, playlists, and albums
+    /// Get the Apple Music catalog charts. Valid values for the types parameter  are songs, playlists, and albums
     public func charts(types: [IncludeParameter], withLimit limit: Int, completion: DataCompletion<ChartResponse>) {
         let request = AntiochRequest(endPoint: CatalogRouter.charts(types, limit), method: .get)
         performRequest(request: request, forResponseType: ChartResponse.self) { result in

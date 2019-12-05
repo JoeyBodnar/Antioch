@@ -10,6 +10,7 @@ import Foundation
 
 extension Antioch {
     
+    /// Get the user's last 10 recently played stations
     public func recentStations(completion: CollectionDataCompletion<RadioStation>) {
         let request = AntiochRequest(endPoint: HistoryRouter.recentStations, method: .get)
         performRequest(request: request, forResponseType: RadioStation.self) { result in
