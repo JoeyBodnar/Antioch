@@ -17,12 +17,15 @@ extension Antioch {
         }
     }
     
+    /// Get a library playlist using its id
     public func libraryPlaylist(forId id: String, completion: DataCompletion<LibraryPlaylist>) {
         libraryItem(forId: id, ofType: LibraryPlaylist.self) { item, error in
             completion?(item, error)
         }
     }
     
+    /// Get the songs for a library playlsit by passing in the playlist's id. We need this method because
+    /// when you retrieve a library playlist, the API does not pass back the songs with it. So we need to retrieve them separately
     public func songs(forLibraryPlaylistId playlistId: String, withLimit limit: Int, andOffset offset: Int, completion: DataCompletion<[LibrarySong]>) {
         let request = AntiochRequest(endPoint: LibraryRouter.songsForPlaylist(playlistId, limit, offset), method: .get)
         performRequest(request: request, forResponseType: LibrarySong.self) { result in
@@ -35,6 +38,7 @@ extension Antioch {
         }
     }
     
+    /// Add items to your library by passing in an array of AddableItem objects
     public func addToLibrary(items: [AddableItem], completion: ((_ success: Bool, _ error: Error?) -> Void)?) {
         let request = AntiochRequest(endPoint: LibraryRouter.addItemsToLibrary(items), method: .post)
         performRequestforVoidResponse(request: request) { success, error in
@@ -42,6 +46,7 @@ extension Antioch {
         }
     }
     
+    /// Add songs to a playlist. Pass in the playlist id and the ids of the songs.
     public func addToPlaylist(itemIds: [String], toPlaylistWithId playlistId: String, completion: VoidResponseCompletion) {
         let request = AntiochRequest(endPoint: LibraryRouter.addItemsToPlaylist(playlistId), method: .post)
         
@@ -68,6 +73,7 @@ extension Antioch {
         }
     }
     
+    /// Get all library items of type T. Max and default limit is 100.
     public func allLibraryItems<T: Decodable & LibraryQueryable>(ofType type: T.Type, withLimit limit: Int, andOffset offset: Int, completion: CollectionDataCompletion<T>) {
         let request = AntiochRequest(endPoint: LibraryRouter.getAllLibrayResources(type, limit, offset), method: .get)
         performRequest(request: request, forResponseType: type) { (result) in
@@ -80,6 +86,7 @@ extension Antioch {
         }
     }
     
+    /// Get the user's recommendations
     public func recommendations(completion: CollectionDataCompletion<Recommendation>) {
         let request = AntiochRequest(endPoint: LibraryRouter.recommendations, method: .get)
         performRequest(request: request, forResponseType: Recommendation.self) { result in

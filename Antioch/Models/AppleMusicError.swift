@@ -16,3 +16,12 @@ public class AppleMusicError: Decodable, Error {
     public let title: String
     public let detail: String?
 }
+
+/// Used for when there is an error, but can't retrieve it from either the data task  or the AppleMusic API
+public class UnknownAntiochError: Error {
+    public let message: String
+    
+    init(message: String) {
+        self.message = message
+    }
+}
