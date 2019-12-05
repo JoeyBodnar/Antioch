@@ -50,8 +50,20 @@ extension Antioch {
     }
     
     /// Get the Apple Music catalog charts. Valid values for the types parameter  are songs, playlists, and albums
-    public func charts(types: [IncludeParameter], withLimit limit: Int, completion: DataCompletion<ChartResponse>) {
-        let request = AntiochRequest(endPoint: CatalogRouter.charts(types, limit), method: .get)
+    public func charts(types: [IncludeParameter], storeFront: String, limit: Int, completion: DataCompletion<ChartResponse>) {
+        let request = AntiochRequest(endPoint: CatalogRouter.charts(types, limit, storeFront), method: .get)
+        performRequest(request: request, forResponseType: ChartResponse.self) { result in
+            switch result {
+            case .success(let response):
+                completion?(response?.results, nil)
+            case .failure(let error):
+                completion?(nil, error)
+            }
+        }
+    }
+    
+    public func chartsForGenre(genre: AppleMusicGenre, types: [IncludeParameter], limit: Int, completion: DataCompletion<ChartResponse>) {
+        let request = AntiochRequest(endPoint: CatalogRouter.chartsForGenre(genre, types, limit), method: .get)
         performRequest(request: request, forResponseType: ChartResponse.self) { result in
             switch result {
             case .success(let response):

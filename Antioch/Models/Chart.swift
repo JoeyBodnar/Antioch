@@ -15,7 +15,7 @@ public final class Chart<T: Decodable>: Decodable {
 }
 
 public final class ChartResponse: Decodable {
-    public let playlists: [Chart<CatalogPlaylist>]
-    public let albums: [Chart<CatalogAlbum>]
-    public let songs: [Chart<CatalogSong>]
+    public let playlists: [Chart<CatalogPlaylist>]?
+    public let albums: [Chart<CatalogAlbum>]?
+    public let songs: [Chart<CatalogSong>]?
 }
