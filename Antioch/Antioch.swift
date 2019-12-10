@@ -82,6 +82,11 @@ public class Antioch {
                 }
             } catch let error {
                 print("Antioch error:: error for request \(request), with error: \(error)")
+                if let unwrappedData = data {
+                    let json = try? JSONSerialization.jsonObject(with: unwrappedData, options: .allowFragments)
+                    print("json retrieved that failed to parse is: \(json) for url \(urlRequest.url?.absoluteString)")
+                }
+                
                 completion?(.failure(error))
             }
         }
