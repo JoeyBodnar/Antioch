@@ -31,7 +31,7 @@ public struct GenreName {
     public static let blues = "Blues"
     public static let comedy = "Comedy"
     public static let childrens = "Children's"
-    public static let christian = "Christian and Gospel"
+    public static let christian = "Christian & Gospel"
     public static let classical = "Classical"
     public static let country = "Country"
     public static let electronic = "Electronic"
