@@ -32,7 +32,7 @@ public class CatalogPlaylistAttributes: Decodable {
     public let curatorName: String
     public let lastModifiedDate: String?
     public let name: String
-    public let playParams: PlayParameters
+    public let playParams: PlayParameters?
     public let playlistType: String
     public let url: String
 }
