@@ -33,7 +33,7 @@ public final class CatalogSongAttributes: Decodable {
     public var genreNames: [String]?
     public var isrc: String?
     public let name: String
-    public let playParams: PlayParameters
+    public let playParams: PlayParameters?
     public let releaseDate: String?
     public let trackNumber: Int
     public let url: String
