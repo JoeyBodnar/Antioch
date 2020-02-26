@@ -38,6 +38,18 @@ extension Antioch {
         }
     }
     
+    public func librarySongs(ids: [String], completion: DataCompletion<[LibrarySong]>) {
+        let request = AntiochRequest(endPoint: LibraryRouter.getMultipleLibraryResources(LibrarySong.self, ids), method: .get)
+        performRequest(request: request, forResponseType: LibrarySong.self) { result in
+            switch result {
+            case .success(let response):
+                completion?(response?.data, nil)
+            case .failure(let error):
+                completion?(nil, error)
+            }
+        }
+    }
+    
     /// Add items to your library by passing in an array of AddableItem objects
     public func addToLibrary(items: [AddableItem], completion: ((_ success: Bool, _ error: Error?) -> Void)?) {
         let request = AntiochRequest(endPoint: LibraryRouter.addItemsToLibrary(items), method: .post)
