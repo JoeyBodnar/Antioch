@@ -470,7 +470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = stephenbodnar.Antioch;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos";
 				SUPPORTS_MACCATALYST = YES;
@@ -501,7 +501,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = stephenbodnar.Antioch;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos";
 				SUPPORTS_MACCATALYST = YES;
