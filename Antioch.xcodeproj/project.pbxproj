@@ -48,7 +48,19 @@
 		9F2203872391643F00C11F47 /* Antioch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2203852391643F00C11F47 /* Antioch.swift */; };
 		9F2203882391643F00C11F47 /* AntiochRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2203862391643F00C11F47 /* AntiochRequest.swift */; };
 		9F305B1F23990C0500ADE6A4 /* AppleMusicGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F305B1E23990C0500ADE6A4 /* AppleMusicGenre.swift */; };
+		9FDDD66924D6B865007EB4D4 /* AntiochTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDDD66824D6B865007EB4D4 /* AntiochTests.swift */; };
+		9FDDD66B24D6B865007EB4D4 /* Antioch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F2203152391633B00C11F47 /* Antioch.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9FDDD66C24D6B865007EB4D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F22030C2391633B00C11F47 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F2203142391633B00C11F47;
+			remoteInfo = Antioch;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9F2203152391633B00C11F47 /* Antioch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Antioch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +106,9 @@
 		9F2203852391643F00C11F47 /* Antioch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Antioch.swift; sourceTree = "<group>"; };
 		9F2203862391643F00C11F47 /* AntiochRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AntiochRequest.swift; sourceTree = "<group>"; };
 		9F305B1E23990C0500ADE6A4 /* AppleMusicGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicGenre.swift; sourceTree = "<group>"; };
+		9FDDD66624D6B865007EB4D4 /* AntiochTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AntiochTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FDDD66824D6B865007EB4D4 /* AntiochTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiochTests.swift; sourceTree = "<group>"; };
+		9FDDD66A24D6B865007EB4D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +119,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9FDDD66324D6B865007EB4D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FDDD66B24D6B865007EB4D4 /* Antioch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -111,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				9F2203172391633B00C11F47 /* Antioch */,
+				9FDDD66724D6B865007EB4D4 /* AntiochTests */,
 				9F2203162391633B00C11F47 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				9F2203152391633B00C11F47 /* Antioch.framework */,
+				9FDDD66624D6B865007EB4D4 /* AntiochTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -204,6 +229,15 @@
 			path = Convenience;
 			sourceTree = "<group>";
 		};
+		9FDDD66724D6B865007EB4D4 /* AntiochTests */ = {
+			isa = PBXGroup;
+			children = (
+				9FDDD66824D6B865007EB4D4 /* AntiochTests.swift */,
+				9FDDD66A24D6B865007EB4D4 /* Info.plist */,
+			);
+			path = AntiochTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -236,18 +270,40 @@
 			productReference = 9F2203152391633B00C11F47 /* Antioch.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		9FDDD66524D6B865007EB4D4 /* AntiochTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FDDD67024D6B865007EB4D4 /* Build configuration list for PBXNativeTarget "AntiochTests" */;
+			buildPhases = (
+				9FDDD66224D6B865007EB4D4 /* Sources */,
+				9FDDD66324D6B865007EB4D4 /* Frameworks */,
+				9FDDD66424D6B865007EB4D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FDDD66D24D6B865007EB4D4 /* PBXTargetDependency */,
+			);
+			name = AntiochTests;
+			productName = AntiochTests;
+			productReference = 9FDDD66624D6B865007EB4D4 /* AntiochTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		9F22030C2391633B00C11F47 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Stephen Bodnar";
 				TargetAttributes = {
 					9F2203142391633B00C11F47 = {
 						CreatedOnToolsVersion = 11.1;
 						LastSwiftMigration = 1110;
+					};
+					9FDDD66524D6B865007EB4D4 = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -265,12 +321,20 @@
 			projectRoot = "";
 			targets = (
 				9F2203142391633B00C11F47 /* Antioch */,
+				9FDDD66524D6B865007EB4D4 /* AntiochTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9F2203132391633B00C11F47 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FDDD66424D6B865007EB4D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -327,7 +391,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9FDDD66224D6B865007EB4D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FDDD66924D6B865007EB4D4 /* AntiochTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9FDDD66D24D6B865007EB4D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F2203142391633B00C11F47 /* Antioch */;
+			targetProxy = 9FDDD66C24D6B865007EB4D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9F22031B2391633B00C11F47 /* Debug */ = {
@@ -511,6 +591,50 @@
 			};
 			name = Release;
 		};
+		9FDDD66E24D6B865007EB4D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U352XG8SZU;
+				INFOPLIST_FILE = AntiochTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = stephenbodnar.AntiochTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos";
+				SWIFT_VERSION = 5.0;
+				VALID_ARCHS = "armv7s x86_64 arm64 arm64e arm64e";
+			};
+			name = Debug;
+		};
+		9FDDD66F24D6B865007EB4D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = U352XG8SZU;
+				INFOPLIST_FILE = AntiochTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = stephenbodnar.AntiochTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos";
+				SWIFT_VERSION = 5.0;
+				VALID_ARCHS = "armv7s x86_64 arm64 arm64e arm64e";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -528,6 +652,15 @@
 			buildConfigurations = (
 				9F22031E2391633B00C11F47 /* Debug */,
 				9F22031F2391633B00C11F47 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FDDD67024D6B865007EB4D4 /* Build configuration list for PBXNativeTarget "AntiochTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FDDD66E24D6B865007EB4D4 /* Debug */,
+				9FDDD66F24D6B865007EB4D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
