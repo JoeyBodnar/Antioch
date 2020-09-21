@@ -29,7 +29,7 @@ extension CatalogPlaylist: Rateable { }
 
 public class CatalogPlaylistAttributes: Decodable {
     public var artwork: Artwork?
-    public let curatorName: String
+    public let curatorName: String?
     public let lastModifiedDate: String?
     public var name: String
     public let playParams: PlayParameters?
