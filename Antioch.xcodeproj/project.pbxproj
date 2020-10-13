@@ -1,1045 +1,697 @@
 // !$*UTF8*$!
 {
-   archiveVersion = "1";
-   objectVersion = "46";
-   objects = {
-      "Antioch::Antioch" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_64";
-         buildPhases = (
-            "OBJ_67",
-            "OBJ_108"
-         );
-         dependencies = (
-         );
-         name = "Antioch";
-         productName = "Antioch";
-         productReference = "Antioch::Antioch::Product";
-         productType = "com.apple.product-type.framework";
-      };
-      "Antioch::Antioch::Product" = {
-         isa = "PBXFileReference";
-         path = "Antioch.framework";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "Antioch::AntiochPackageTests::ProductTarget" = {
-         isa = "PBXAggregateTarget";
-         buildConfigurationList = "OBJ_116";
-         buildPhases = (
-         );
-         dependencies = (
-            "OBJ_119"
-         );
-         name = "AntiochPackageTests";
-         productName = "AntiochPackageTests";
-      };
-      "Antioch::AntiochTests" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_121";
-         buildPhases = (
-            "OBJ_124",
-            "OBJ_126"
-         );
-         dependencies = (
-            "OBJ_128"
-         );
-         name = "AntiochTests";
-         productName = "AntiochTests";
-         productReference = "Antioch::AntiochTests::Product";
-         productType = "com.apple.product-type.bundle.unit-test";
-      };
-      "Antioch::AntiochTests::Product" = {
-         isa = "PBXFileReference";
-         path = "AntiochTests.xctest";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "Antioch::SwiftPMPackageDescription" = {
-         isa = "PBXNativeTarget";
-         buildConfigurationList = "OBJ_110";
-         buildPhases = (
-            "OBJ_113"
-         );
-         dependencies = (
-         );
-         name = "AntiochPackageDescription";
-         productName = "AntiochPackageDescription";
-         productType = "com.apple.product-type.framework";
-      };
-      "OBJ_1" = {
-         isa = "PBXProject";
-         attributes = {
-            LastSwiftMigration = "9999";
-            LastUpgradeCheck = "9999";
-         };
-         buildConfigurationList = "OBJ_2";
-         compatibilityVersion = "Xcode 3.2";
-         developmentRegion = "en";
-         hasScannedForEncodings = "0";
-         knownRegions = (
-            "en"
-         );
-         mainGroup = "OBJ_5";
-         productRefGroup = "OBJ_59";
-         projectDirPath = ".";
-         targets = (
-            "Antioch::Antioch",
-            "Antioch::SwiftPMPackageDescription",
-            "Antioch::AntiochPackageTests::ProductTarget",
-            "Antioch::AntiochTests"
-         );
-      };
-      "OBJ_10" = {
-         isa = "PBXFileReference";
-         path = "Info.plist";
-         sourceTree = "<group>";
-      };
-      "OBJ_100" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_46";
-      };
-      "OBJ_101" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_47";
-      };
-      "OBJ_102" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_48";
-      };
-      "OBJ_103" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_49";
-      };
-      "OBJ_104" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_51";
-      };
-      "OBJ_105" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_52";
-      };
-      "OBJ_106" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_53";
-      };
-      "OBJ_107" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_54";
-      };
-      "OBJ_108" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-         );
-      };
-      "OBJ_11" = {
-         isa = "PBXFileReference";
-         path = "Antioch.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_110" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_111",
-            "OBJ_112"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_111" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "5",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode11-5.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk",
-               "-package-description-version",
-               "5.2.0"
-            );
-            SWIFT_VERSION = "5.0";
-         };
-         name = "Debug";
-      };
-      "OBJ_112" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            LD = "/usr/bin/true";
-            OTHER_SWIFT_FLAGS = (
-               "-swift-version",
-               "5",
-               "-I",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2",
-               "-target",
-               "x86_64-apple-macosx10.10",
-               "-sdk",
-               "/Applications/Xcode11-5.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk",
-               "-package-description-version",
-               "5.2.0"
-            );
-            SWIFT_VERSION = "5.0";
-         };
-         name = "Release";
-      };
-      "OBJ_113" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_114"
-         );
-      };
-      "OBJ_114" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_6";
-      };
-      "OBJ_116" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_117",
-            "OBJ_118"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_117" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-         };
-         name = "Debug";
-      };
-      "OBJ_118" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-         };
-         name = "Release";
-      };
-      "OBJ_119" = {
-         isa = "PBXTargetDependency";
-         target = "Antioch::AntiochTests";
-      };
-      "OBJ_12" = {
-         isa = "PBXFileReference";
-         path = "AntiochRequest.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_121" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_122",
-            "OBJ_123"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_122" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_MODULES = "YES";
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "Antioch.xcodeproj/AntiochTests_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "11.0";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.12";
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "5.0";
-            TARGET_NAME = "AntiochTests";
-            TVOS_DEPLOYMENT_TARGET = "9.0";
-            WATCHOS_DEPLOYMENT_TARGET = "2.0";
-         };
-         name = "Debug";
-      };
-      "OBJ_123" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_MODULES = "YES";
-            EMBEDDED_CONTENT_CONTAINS_SWIFT = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "Antioch.xcodeproj/AntiochTests_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "11.0";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "@loader_path/../Frameworks",
-               "@loader_path/Frameworks"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.12";
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "5.0";
-            TARGET_NAME = "AntiochTests";
-            TVOS_DEPLOYMENT_TARGET = "9.0";
-            WATCHOS_DEPLOYMENT_TARGET = "2.0";
-         };
-         name = "Release";
-      };
-      "OBJ_124" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_125"
-         );
-      };
-      "OBJ_125" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_58";
-      };
-      "OBJ_126" = {
-         isa = "PBXFrameworksBuildPhase";
-         files = (
-            "OBJ_127"
-         );
-      };
-      "OBJ_127" = {
-         isa = "PBXBuildFile";
-         fileRef = "Antioch::Antioch::Product";
-      };
-      "OBJ_128" = {
-         isa = "PBXTargetDependency";
-         target = "Antioch::Antioch";
-      };
-      "OBJ_13" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_14",
-            "OBJ_15",
-            "OBJ_16",
-            "OBJ_17",
-            "OBJ_18"
-         );
-         name = "Convenience";
-         path = "Convenience";
-         sourceTree = "<group>";
-      };
-      "OBJ_14" = {
-         isa = "PBXFileReference";
-         path = "Antioch-Catalog.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_15" = {
-         isa = "PBXFileReference";
-         path = "Antioch-History.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_16" = {
-         isa = "PBXFileReference";
-         path = "Antioch-Library.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_17" = {
-         isa = "PBXFileReference";
-         path = "Antioch-Ratings.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_18" = {
-         isa = "PBXFileReference";
-         path = "Antioch-Search.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_19" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_20",
-            "OBJ_21",
-            "OBJ_22",
-            "OBJ_23",
-            "OBJ_24",
-            "OBJ_25",
-            "OBJ_26",
-            "OBJ_27",
-            "OBJ_28",
-            "OBJ_29",
-            "OBJ_30",
-            "OBJ_31",
-            "OBJ_32",
-            "OBJ_33",
-            "OBJ_34",
-            "OBJ_35",
-            "OBJ_36",
-            "OBJ_37",
-            "OBJ_38",
-            "OBJ_39",
-            "OBJ_40",
-            "OBJ_41",
-            "OBJ_42",
-            "OBJ_43"
-         );
-         name = "Models";
-         path = "Models";
-         sourceTree = "<group>";
-      };
-      "OBJ_2" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_3",
-            "OBJ_4"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_20" = {
-         isa = "PBXFileReference";
-         path = "AppleMusicError.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_21" = {
-         isa = "PBXFileReference";
-         path = "AppleMusicGenre.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_22" = {
-         isa = "PBXFileReference";
-         path = "AppleMusicItemType.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_23" = {
-         isa = "PBXFileReference";
-         path = "Artwork.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_24" = {
-         isa = "PBXFileReference";
-         path = "CatalogAlbum.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_25" = {
-         isa = "PBXFileReference";
-         path = "CatalogArtist.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_26" = {
-         isa = "PBXFileReference";
-         path = "CatalogPlaylist.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_27" = {
-         isa = "PBXFileReference";
-         path = "CatalogSong.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_28" = {
-         isa = "PBXFileReference";
-         path = "Chart.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_29" = {
-         isa = "PBXFileReference";
-         path = "Curator.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_3" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_OBJC_ARC = "YES";
-            COMBINE_HIDPI_IMAGES = "YES";
-            COPY_PHASE_STRIP = "NO";
-            DEBUG_INFORMATION_FORMAT = "dwarf";
-            DYLIB_INSTALL_NAME_BASE = "@rpath";
-            ENABLE_NS_ASSERTIONS = "YES";
-            GCC_OPTIMIZATION_LEVEL = "0";
-            GCC_PREPROCESSOR_DEFINITIONS = (
-               "$(inherited)",
-               "SWIFT_PACKAGE=1",
-               "DEBUG=1"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            ONLY_ACTIVE_ARCH = "YES";
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
-               "-DXcode"
-            );
-            PRODUCT_NAME = "$(TARGET_NAME)";
-            SDKROOT = "macosx";
-            SUPPORTED_PLATFORMS = (
-               "macosx",
-               "iphoneos",
-               "iphonesimulator",
-               "appletvos",
-               "appletvsimulator",
-               "watchos",
-               "watchsimulator"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)",
-               "SWIFT_PACKAGE",
-               "DEBUG"
-            );
-            SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-            USE_HEADERMAP = "NO";
-         };
-         name = "Debug";
-      };
-      "OBJ_30" = {
-         isa = "PBXFileReference";
-         path = "EditorialNotes.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_31" = {
-         isa = "PBXFileReference";
-         path = "LibraryAlbum.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_32" = {
-         isa = "PBXFileReference";
-         path = "LibraryArtist.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_33" = {
-         isa = "PBXFileReference";
-         path = "LibraryPlaylist.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_34" = {
-         isa = "PBXFileReference";
-         path = "LibrarySong.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_35" = {
-         isa = "PBXFileReference";
-         path = "PlayParameters.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_36" = {
-         isa = "PBXFileReference";
-         path = "RadioStation.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_37" = {
-         isa = "PBXFileReference";
-         path = "Rating.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_38" = {
-         isa = "PBXFileReference";
-         path = "Recommendation.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_39" = {
-         isa = "PBXFileReference";
-         path = "Relationship.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_4" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            CLANG_ENABLE_OBJC_ARC = "YES";
-            COMBINE_HIDPI_IMAGES = "YES";
-            COPY_PHASE_STRIP = "YES";
-            DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-            DYLIB_INSTALL_NAME_BASE = "@rpath";
-            GCC_OPTIMIZATION_LEVEL = "s";
-            GCC_PREPROCESSOR_DEFINITIONS = (
-               "$(inherited)",
-               "SWIFT_PACKAGE=1"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.10";
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)",
-               "-DXcode"
-            );
-            PRODUCT_NAME = "$(TARGET_NAME)";
-            SDKROOT = "macosx";
-            SUPPORTED_PLATFORMS = (
-               "macosx",
-               "iphoneos",
-               "iphonesimulator",
-               "appletvos",
-               "appletvsimulator",
-               "watchos",
-               "watchsimulator"
-            );
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)",
-               "SWIFT_PACKAGE"
-            );
-            SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-            USE_HEADERMAP = "NO";
-         };
-         name = "Release";
-      };
-      "OBJ_40" = {
-         isa = "PBXFileReference";
-         path = "Resource.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_41" = {
-         isa = "PBXFileReference";
-         path = "ResponseRoot.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_42" = {
-         isa = "PBXFileReference";
-         path = "SearchHints.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_43" = {
-         isa = "PBXFileReference";
-         path = "SearchResults.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_44" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_45",
-            "OBJ_46",
-            "OBJ_47",
-            "OBJ_48",
-            "OBJ_49"
-         );
-         name = "Routers";
-         path = "Routers";
-         sourceTree = "<group>";
-      };
-      "OBJ_45" = {
-         isa = "PBXFileReference";
-         path = "AppleMusicCatalogRouter.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_46" = {
-         isa = "PBXFileReference";
-         path = "AppleMusicLibraryRouter.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_47" = {
-         isa = "PBXFileReference";
-         path = "AppleMusicRatingRouter.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_48" = {
-         isa = "PBXFileReference";
-         path = "AppleMusicSearchRouter.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_49" = {
-         isa = "PBXFileReference";
-         path = "AppleMusicUserHistoryRouter.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_5" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_6",
-            "OBJ_7",
-            "OBJ_55",
-            "OBJ_59",
-            "OBJ_62"
-         );
-         path = "";
-         sourceTree = "<group>";
-      };
-      "OBJ_50" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_51",
-            "OBJ_52",
-            "OBJ_53",
-            "OBJ_54"
-         );
-         name = "Utils";
-         path = "Utils";
-         sourceTree = "<group>";
-      };
-      "OBJ_51" = {
-         isa = "PBXFileReference";
-         path = "AntiochProtocols.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_52" = {
-         isa = "PBXFileReference";
-         path = "HTTPConstants.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_53" = {
-         isa = "PBXFileReference";
-         path = "HTTPMethod.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_54" = {
-         isa = "PBXFileReference";
-         path = "RoutingConstants.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_55" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_56"
-         );
-         name = "Tests";
-         path = "";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_56" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_57",
-            "OBJ_58"
-         );
-         name = "AntiochTests";
-         path = "Tests/AntiochTests";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_57" = {
-         isa = "PBXFileReference";
-         path = "Info.plist";
-         sourceTree = "<group>";
-      };
-      "OBJ_58" = {
-         isa = "PBXFileReference";
-         path = "AntiochTests.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_59" = {
-         isa = "PBXGroup";
-         children = (
-            "Antioch::AntiochTests::Product",
-            "Antioch::Antioch::Product"
-         );
-         name = "Products";
-         path = "";
-         sourceTree = "BUILT_PRODUCTS_DIR";
-      };
-      "OBJ_6" = {
-         isa = "PBXFileReference";
-         explicitFileType = "sourcecode.swift";
-         path = "Package.swift";
-         sourceTree = "<group>";
-      };
-      "OBJ_62" = {
-         isa = "PBXFileReference";
-         path = "README.md";
-         sourceTree = "<group>";
-      };
-      "OBJ_64" = {
-         isa = "XCConfigurationList";
-         buildConfigurations = (
-            "OBJ_65",
-            "OBJ_66"
-         );
-         defaultConfigurationIsVisible = "0";
-         defaultConfigurationName = "Release";
-      };
-      "OBJ_65" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "Antioch.xcodeproj/Antioch_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "11.0";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.12";
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "Antioch";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "5.0";
-            TARGET_NAME = "Antioch";
-            TVOS_DEPLOYMENT_TARGET = "9.0";
-            WATCHOS_DEPLOYMENT_TARGET = "2.0";
-         };
-         name = "Debug";
-      };
-      "OBJ_66" = {
-         isa = "XCBuildConfiguration";
-         buildSettings = {
-            ENABLE_TESTABILITY = "YES";
-            FRAMEWORK_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(PLATFORM_DIR)/Developer/Library/Frameworks"
-            );
-            HEADER_SEARCH_PATHS = (
-               "$(inherited)"
-            );
-            INFOPLIST_FILE = "Antioch.xcodeproj/Antioch_Info.plist";
-            IPHONEOS_DEPLOYMENT_TARGET = "11.0";
-            LD_RUNPATH_SEARCH_PATHS = (
-               "$(inherited)",
-               "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx"
-            );
-            MACOSX_DEPLOYMENT_TARGET = "10.12";
-            OTHER_CFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_LDFLAGS = (
-               "$(inherited)"
-            );
-            OTHER_SWIFT_FLAGS = (
-               "$(inherited)"
-            );
-            PRODUCT_BUNDLE_IDENTIFIER = "Antioch";
-            PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-            PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-            SKIP_INSTALL = "YES";
-            SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
-               "$(inherited)"
-            );
-            SWIFT_VERSION = "5.0";
-            TARGET_NAME = "Antioch";
-            TVOS_DEPLOYMENT_TARGET = "9.0";
-            WATCHOS_DEPLOYMENT_TARGET = "2.0";
-         };
-         name = "Release";
-      };
-      "OBJ_67" = {
-         isa = "PBXSourcesBuildPhase";
-         files = (
-            "OBJ_68",
-            "OBJ_69",
-            "OBJ_70",
-            "OBJ_71",
-            "OBJ_72",
-            "OBJ_73",
-            "OBJ_74",
-            "OBJ_75",
-            "OBJ_76",
-            "OBJ_77",
-            "OBJ_78",
-            "OBJ_79",
-            "OBJ_80",
-            "OBJ_81",
-            "OBJ_82",
-            "OBJ_83",
-            "OBJ_84",
-            "OBJ_85",
-            "OBJ_86",
-            "OBJ_87",
-            "OBJ_88",
-            "OBJ_89",
-            "OBJ_90",
-            "OBJ_91",
-            "OBJ_92",
-            "OBJ_93",
-            "OBJ_94",
-            "OBJ_95",
-            "OBJ_96",
-            "OBJ_97",
-            "OBJ_98",
-            "OBJ_99",
-            "OBJ_100",
-            "OBJ_101",
-            "OBJ_102",
-            "OBJ_103",
-            "OBJ_104",
-            "OBJ_105",
-            "OBJ_106",
-            "OBJ_107"
-         );
-      };
-      "OBJ_68" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_11";
-      };
-      "OBJ_69" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_12";
-      };
-      "OBJ_7" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_8"
-         );
-         name = "Sources";
-         path = "";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_70" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_14";
-      };
-      "OBJ_71" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_15";
-      };
-      "OBJ_72" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_16";
-      };
-      "OBJ_73" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_17";
-      };
-      "OBJ_74" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_18";
-      };
-      "OBJ_75" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_20";
-      };
-      "OBJ_76" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_21";
-      };
-      "OBJ_77" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_22";
-      };
-      "OBJ_78" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_23";
-      };
-      "OBJ_79" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_24";
-      };
-      "OBJ_8" = {
-         isa = "PBXGroup";
-         children = (
-            "OBJ_9",
-            "OBJ_10",
-            "OBJ_11",
-            "OBJ_12",
-            "OBJ_13",
-            "OBJ_19",
-            "OBJ_44",
-            "OBJ_50"
-         );
-         name = "Antioch";
-         path = "Sources/Antioch";
-         sourceTree = "SOURCE_ROOT";
-      };
-      "OBJ_80" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_25";
-      };
-      "OBJ_81" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_26";
-      };
-      "OBJ_82" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_27";
-      };
-      "OBJ_83" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_28";
-      };
-      "OBJ_84" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_29";
-      };
-      "OBJ_85" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_30";
-      };
-      "OBJ_86" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_31";
-      };
-      "OBJ_87" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_32";
-      };
-      "OBJ_88" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_33";
-      };
-      "OBJ_89" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_34";
-      };
-      "OBJ_9" = {
-         isa = "PBXFileReference";
-         path = "Antioch.h";
-         sourceTree = "<group>";
-      };
-      "OBJ_90" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_35";
-      };
-      "OBJ_91" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_36";
-      };
-      "OBJ_92" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_37";
-      };
-      "OBJ_93" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_38";
-      };
-      "OBJ_94" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_39";
-      };
-      "OBJ_95" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_40";
-      };
-      "OBJ_96" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_41";
-      };
-      "OBJ_97" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_42";
-      };
-      "OBJ_98" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_43";
-      };
-      "OBJ_99" = {
-         isa = "PBXBuildFile";
-         fileRef = "OBJ_45";
-      };
-   };
-   rootObject = "OBJ_1";
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"Antioch::AntiochPackageTests::ProductTarget" /* AntiochPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_116 /* Build configuration list for PBXAggregateTarget "AntiochPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_119 /* PBXTargetDependency */,
+			);
+			name = AntiochPackageTests;
+			productName = AntiochPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		9F4249D12535A8F500F065BF /* AntiochRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */; };
+		9F4249DB2535AC5500F065BF /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4249DA2535AC5500F065BF /* RequestInterceptor.swift */; };
+		9F4809C82535B15C004F64E7 /* CatalogRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */; };
+		9F764EC725359EDB009DF73C /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */; };
+		OBJ_100 /* AppleMusicLibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* AppleMusicLibraryRouter.swift */; };
+		OBJ_101 /* AppleMusicRatingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* AppleMusicRatingRouter.swift */; };
+		OBJ_102 /* AppleMusicSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* AppleMusicSearchRouter.swift */; };
+		OBJ_103 /* AppleMusicUserHistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* AppleMusicUserHistoryRouter.swift */; };
+		OBJ_104 /* AntiochProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* AntiochProtocols.swift */; };
+		OBJ_105 /* HTTPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* HTTPConstants.swift */; };
+		OBJ_106 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* HTTPMethod.swift */; };
+		OBJ_107 /* RoutingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* RoutingConstants.swift */; };
+		OBJ_114 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_125 /* AntiochTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* AntiochTests.swift */; };
+		OBJ_127 /* Antioch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Antioch::Antioch::Product" /* Antioch.framework */; };
+		OBJ_68 /* Antioch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Antioch.swift */; };
+		OBJ_69 /* AntiochRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* AntiochRequest.swift */; };
+		OBJ_70 /* Antioch-Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Antioch-Catalog.swift */; };
+		OBJ_71 /* Antioch-History.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Antioch-History.swift */; };
+		OBJ_72 /* Antioch-Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Antioch-Library.swift */; };
+		OBJ_73 /* Antioch-Ratings.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Antioch-Ratings.swift */; };
+		OBJ_74 /* Antioch-Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Antioch-Search.swift */; };
+		OBJ_75 /* AppleMusicError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* AppleMusicError.swift */; };
+		OBJ_76 /* AppleMusicGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* AppleMusicGenre.swift */; };
+		OBJ_77 /* AppleMusicItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* AppleMusicItemType.swift */; };
+		OBJ_78 /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Artwork.swift */; };
+		OBJ_79 /* CatalogAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* CatalogAlbum.swift */; };
+		OBJ_80 /* CatalogArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* CatalogArtist.swift */; };
+		OBJ_81 /* CatalogPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* CatalogPlaylist.swift */; };
+		OBJ_82 /* CatalogSong.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* CatalogSong.swift */; };
+		OBJ_83 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Chart.swift */; };
+		OBJ_84 /* Curator.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* Curator.swift */; };
+		OBJ_85 /* EditorialNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* EditorialNotes.swift */; };
+		OBJ_86 /* LibraryAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* LibraryAlbum.swift */; };
+		OBJ_87 /* LibraryArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* LibraryArtist.swift */; };
+		OBJ_88 /* LibraryPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* LibraryPlaylist.swift */; };
+		OBJ_89 /* LibrarySong.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* LibrarySong.swift */; };
+		OBJ_90 /* PlayParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* PlayParameters.swift */; };
+		OBJ_91 /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* RadioStation.swift */; };
+		OBJ_92 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* Rating.swift */; };
+		OBJ_93 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* Recommendation.swift */; };
+		OBJ_94 /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* Relationship.swift */; };
+		OBJ_95 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Resource.swift */; };
+		OBJ_96 /* ResponseRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* ResponseRoot.swift */; };
+		OBJ_97 /* SearchHints.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* SearchHints.swift */; };
+		OBJ_98 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* SearchResults.swift */; };
+		OBJ_99 /* AppleMusicCatalogRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* AppleMusicCatalogRouter.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F764EC0253598C9009DF73C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Antioch::Antioch";
+			remoteInfo = Antioch;
+		};
+		9F764EC3253598CA009DF73C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Antioch::AntiochTests";
+			remoteInfo = AntiochTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9F4249DA2535AC5500F065BF /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
+		9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRouterTests.swift; sourceTree = "<group>"; };
+		9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Protocol.swift"; sourceTree = "<group>"; };
+		9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiochRequestTests.swift; sourceTree = "<group>"; };
+		"Antioch::Antioch::Product" /* Antioch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Antioch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"Antioch::AntiochTests::Product" /* AntiochTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntiochTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		OBJ_11 /* Antioch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Antioch.swift; sourceTree = "<group>"; };
+		OBJ_12 /* AntiochRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiochRequest.swift; sourceTree = "<group>"; };
+		OBJ_14 /* Antioch-Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Antioch-Catalog.swift"; sourceTree = "<group>"; };
+		OBJ_15 /* Antioch-History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Antioch-History.swift"; sourceTree = "<group>"; };
+		OBJ_16 /* Antioch-Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Antioch-Library.swift"; sourceTree = "<group>"; };
+		OBJ_17 /* Antioch-Ratings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Antioch-Ratings.swift"; sourceTree = "<group>"; };
+		OBJ_18 /* Antioch-Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Antioch-Search.swift"; sourceTree = "<group>"; };
+		OBJ_20 /* AppleMusicError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicError.swift; sourceTree = "<group>"; };
+		OBJ_21 /* AppleMusicGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicGenre.swift; sourceTree = "<group>"; };
+		OBJ_22 /* AppleMusicItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicItemType.swift; sourceTree = "<group>"; };
+		OBJ_23 /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		OBJ_24 /* CatalogAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogAlbum.swift; sourceTree = "<group>"; };
+		OBJ_25 /* CatalogArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogArtist.swift; sourceTree = "<group>"; };
+		OBJ_26 /* CatalogPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogPlaylist.swift; sourceTree = "<group>"; };
+		OBJ_27 /* CatalogSong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSong.swift; sourceTree = "<group>"; };
+		OBJ_28 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		OBJ_29 /* Curator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curator.swift; sourceTree = "<group>"; };
+		OBJ_30 /* EditorialNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorialNotes.swift; sourceTree = "<group>"; };
+		OBJ_31 /* LibraryAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAlbum.swift; sourceTree = "<group>"; };
+		OBJ_32 /* LibraryArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryArtist.swift; sourceTree = "<group>"; };
+		OBJ_33 /* LibraryPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryPlaylist.swift; sourceTree = "<group>"; };
+		OBJ_34 /* LibrarySong.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibrarySong.swift; sourceTree = "<group>"; };
+		OBJ_35 /* PlayParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayParameters.swift; sourceTree = "<group>"; };
+		OBJ_36 /* RadioStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
+		OBJ_37 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		OBJ_38 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
+		OBJ_39 /* Relationship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Relationship.swift; sourceTree = "<group>"; };
+		OBJ_40 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		OBJ_41 /* ResponseRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseRoot.swift; sourceTree = "<group>"; };
+		OBJ_42 /* SearchHints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHints.swift; sourceTree = "<group>"; };
+		OBJ_43 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		OBJ_45 /* AppleMusicCatalogRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicCatalogRouter.swift; sourceTree = "<group>"; };
+		OBJ_46 /* AppleMusicLibraryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicLibraryRouter.swift; sourceTree = "<group>"; };
+		OBJ_47 /* AppleMusicRatingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicRatingRouter.swift; sourceTree = "<group>"; };
+		OBJ_48 /* AppleMusicSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicSearchRouter.swift; sourceTree = "<group>"; };
+		OBJ_49 /* AppleMusicUserHistoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicUserHistoryRouter.swift; sourceTree = "<group>"; };
+		OBJ_51 /* AntiochProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiochProtocols.swift; sourceTree = "<group>"; };
+		OBJ_52 /* HTTPConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPConstants.swift; sourceTree = "<group>"; };
+		OBJ_53 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		OBJ_54 /* RoutingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingConstants.swift; sourceTree = "<group>"; };
+		OBJ_57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		OBJ_58 /* AntiochTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiochTests.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_62 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_9 /* Antioch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Antioch.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_108 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_126 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_127 /* Antioch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_13 /* Convenience */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* Antioch-Catalog.swift */,
+				OBJ_15 /* Antioch-History.swift */,
+				OBJ_16 /* Antioch-Library.swift */,
+				OBJ_17 /* Antioch-Ratings.swift */,
+				OBJ_18 /* Antioch-Search.swift */,
+			);
+			path = Convenience;
+			sourceTree = "<group>";
+		};
+		OBJ_19 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_20 /* AppleMusicError.swift */,
+				OBJ_21 /* AppleMusicGenre.swift */,
+				OBJ_22 /* AppleMusicItemType.swift */,
+				OBJ_23 /* Artwork.swift */,
+				OBJ_24 /* CatalogAlbum.swift */,
+				OBJ_25 /* CatalogArtist.swift */,
+				OBJ_26 /* CatalogPlaylist.swift */,
+				OBJ_27 /* CatalogSong.swift */,
+				OBJ_28 /* Chart.swift */,
+				OBJ_29 /* Curator.swift */,
+				OBJ_30 /* EditorialNotes.swift */,
+				OBJ_31 /* LibraryAlbum.swift */,
+				OBJ_32 /* LibraryArtist.swift */,
+				OBJ_33 /* LibraryPlaylist.swift */,
+				OBJ_34 /* LibrarySong.swift */,
+				OBJ_35 /* PlayParameters.swift */,
+				OBJ_36 /* RadioStation.swift */,
+				OBJ_37 /* Rating.swift */,
+				OBJ_38 /* Recommendation.swift */,
+				OBJ_39 /* Relationship.swift */,
+				OBJ_40 /* Resource.swift */,
+				OBJ_41 /* ResponseRoot.swift */,
+				OBJ_42 /* SearchHints.swift */,
+				OBJ_43 /* SearchResults.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		OBJ_44 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_45 /* AppleMusicCatalogRouter.swift */,
+				OBJ_46 /* AppleMusicLibraryRouter.swift */,
+				OBJ_47 /* AppleMusicRatingRouter.swift */,
+				OBJ_48 /* AppleMusicSearchRouter.swift */,
+				OBJ_49 /* AppleMusicUserHistoryRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_55 /* Tests */,
+				OBJ_59 /* Products */,
+				OBJ_62 /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_50 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9F4249DA2535AC5500F065BF /* RequestInterceptor.swift */,
+				9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */,
+				OBJ_51 /* AntiochProtocols.swift */,
+				OBJ_52 /* HTTPConstants.swift */,
+				OBJ_53 /* HTTPMethod.swift */,
+				OBJ_54 /* RoutingConstants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		OBJ_55 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_56 /* AntiochTests */,
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_56 /* AntiochTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_57 /* Info.plist */,
+				OBJ_58 /* AntiochTests.swift */,
+				9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */,
+				9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */,
+			);
+			name = AntiochTests;
+			path = Tests/AntiochTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"Antioch::AntiochTests::Product" /* AntiochTests.xctest */,
+				"Antioch::Antioch::Product" /* Antioch.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* Antioch */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_8 /* Antioch */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_9 /* Antioch.h */,
+				OBJ_10 /* Info.plist */,
+				OBJ_11 /* Antioch.swift */,
+				OBJ_12 /* AntiochRequest.swift */,
+				OBJ_13 /* Convenience */,
+				OBJ_19 /* Models */,
+				OBJ_44 /* Routers */,
+				OBJ_50 /* Utils */,
+			);
+			name = Antioch;
+			path = Sources/Antioch;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"Antioch::Antioch" /* Antioch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_64 /* Build configuration list for PBXNativeTarget "Antioch" */;
+			buildPhases = (
+				OBJ_67 /* Sources */,
+				OBJ_108 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Antioch;
+			productName = Antioch;
+			productReference = "Antioch::Antioch::Product" /* Antioch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Antioch::AntiochTests" /* AntiochTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_121 /* Build configuration list for PBXNativeTarget "AntiochTests" */;
+			buildPhases = (
+				OBJ_124 /* Sources */,
+				OBJ_126 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_128 /* PBXTargetDependency */,
+			);
+			name = AntiochTests;
+			productName = AntiochTests;
+			productReference = "Antioch::AntiochTests::Product" /* AntiochTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"Antioch::SwiftPMPackageDescription" /* AntiochPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_110 /* Build configuration list for PBXNativeTarget "AntiochPackageDescription" */;
+			buildPhases = (
+				OBJ_113 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AntiochPackageDescription;
+			productName = AntiochPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Antioch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"Antioch::Antioch" /* Antioch */,
+				"Antioch::SwiftPMPackageDescription" /* AntiochPackageDescription */,
+				"Antioch::AntiochPackageTests::ProductTarget" /* AntiochPackageTests */,
+				"Antioch::AntiochTests" /* AntiochTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_113 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_114 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_124 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				9F4249D12535A8F500F065BF /* AntiochRequestTests.swift in Sources */,
+				9F4809C82535B15C004F64E7 /* CatalogRouterTests.swift in Sources */,
+				OBJ_125 /* AntiochTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_67 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_68 /* Antioch.swift in Sources */,
+				9F4249DB2535AC5500F065BF /* RequestInterceptor.swift in Sources */,
+				OBJ_69 /* AntiochRequest.swift in Sources */,
+				OBJ_70 /* Antioch-Catalog.swift in Sources */,
+				OBJ_71 /* Antioch-History.swift in Sources */,
+				OBJ_72 /* Antioch-Library.swift in Sources */,
+				OBJ_73 /* Antioch-Ratings.swift in Sources */,
+				OBJ_74 /* Antioch-Search.swift in Sources */,
+				OBJ_75 /* AppleMusicError.swift in Sources */,
+				OBJ_76 /* AppleMusicGenre.swift in Sources */,
+				OBJ_77 /* AppleMusicItemType.swift in Sources */,
+				OBJ_78 /* Artwork.swift in Sources */,
+				OBJ_79 /* CatalogAlbum.swift in Sources */,
+				OBJ_80 /* CatalogArtist.swift in Sources */,
+				OBJ_81 /* CatalogPlaylist.swift in Sources */,
+				OBJ_82 /* CatalogSong.swift in Sources */,
+				OBJ_83 /* Chart.swift in Sources */,
+				OBJ_84 /* Curator.swift in Sources */,
+				OBJ_85 /* EditorialNotes.swift in Sources */,
+				OBJ_86 /* LibraryAlbum.swift in Sources */,
+				OBJ_87 /* LibraryArtist.swift in Sources */,
+				OBJ_88 /* LibraryPlaylist.swift in Sources */,
+				OBJ_89 /* LibrarySong.swift in Sources */,
+				OBJ_90 /* PlayParameters.swift in Sources */,
+				9F764EC725359EDB009DF73C /* URLSession+Protocol.swift in Sources */,
+				OBJ_91 /* RadioStation.swift in Sources */,
+				OBJ_92 /* Rating.swift in Sources */,
+				OBJ_93 /* Recommendation.swift in Sources */,
+				OBJ_94 /* Relationship.swift in Sources */,
+				OBJ_95 /* Resource.swift in Sources */,
+				OBJ_96 /* ResponseRoot.swift in Sources */,
+				OBJ_97 /* SearchHints.swift in Sources */,
+				OBJ_98 /* SearchResults.swift in Sources */,
+				OBJ_99 /* AppleMusicCatalogRouter.swift in Sources */,
+				OBJ_100 /* AppleMusicLibraryRouter.swift in Sources */,
+				OBJ_101 /* AppleMusicRatingRouter.swift in Sources */,
+				OBJ_102 /* AppleMusicSearchRouter.swift in Sources */,
+				OBJ_103 /* AppleMusicUserHistoryRouter.swift in Sources */,
+				OBJ_104 /* AntiochProtocols.swift in Sources */,
+				OBJ_105 /* HTTPConstants.swift in Sources */,
+				OBJ_106 /* HTTPMethod.swift in Sources */,
+				OBJ_107 /* RoutingConstants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_119 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Antioch::AntiochTests" /* AntiochTests */;
+			targetProxy = 9F764EC3253598CA009DF73C /* PBXContainerItemProxy */;
+		};
+		OBJ_128 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Antioch::Antioch" /* Antioch */;
+			targetProxy = 9F764EC0253598C9009DF73C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode11-5.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.2.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		OBJ_112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 5 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4_2 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode11-5.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk -package-description-version 5.2.0";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		OBJ_117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Antioch.xcodeproj/AntiochTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = AntiochTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_123 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Antioch.xcodeproj/AntiochTests_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = AntiochTests;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+					"DEBUG=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"SWIFT_PACKAGE=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) SWIFT_PACKAGE";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Antioch.xcodeproj/Antioch_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Antioch;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = Antioch;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Antioch.xcodeproj/Antioch_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Antioch;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = Antioch;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_110 /* Build configuration list for PBXNativeTarget "AntiochPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_111 /* Debug */,
+				OBJ_112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_116 /* Build configuration list for PBXAggregateTarget "AntiochPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_117 /* Debug */,
+				OBJ_118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_121 /* Build configuration list for PBXNativeTarget "AntiochTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_122 /* Debug */,
+				OBJ_123 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "Antioch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_64 /* Build configuration list for PBXNativeTarget "Antioch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_65 /* Debug */,
+				OBJ_66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
 }

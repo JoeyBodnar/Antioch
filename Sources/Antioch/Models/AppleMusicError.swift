@@ -1,7 +1,7 @@
 import Foundation
 
 // https://developer.apple.com/documentation/applemusicapi/error
-public class AppleMusicError: Decodable, Error {
+public class AppleMusicError: Codable, Error {
     public let id: String
     public let code: String
     public let status: String

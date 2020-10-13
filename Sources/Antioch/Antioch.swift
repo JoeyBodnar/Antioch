@@ -1,5 +1,4 @@
 import Foundation
-
 /// The completion to use when expecting a data response (retrieving songs, playlists, rating, albums, etc)
 public typealias DataCompletion<T> = ((_ item: T?, _ error: Error?) -> Void)?
 
@@ -14,6 +13,14 @@ public class Antioch {
     
     public static let shared = Antioch()
     
+    internal let session: URLSessionProtocol
+    internal let dispatchQueue: DispatchQueue
+    
+    public init(session: URLSessionProtocol = URLSession.shared, dispatchQueue: DispatchQueue = .main) {
+            self.session = session
+            self.dispatchQueue = dispatchQueue
+        }
+    
     public func configure(storeFront: String, authenticationHeader: String) {
         self.storeFront = storeFront
         self.authenticationHeader = authenticationHeader
@@ -22,14 +29,26 @@ public class Antioch {
     /// The storefront for user-specific requests. Default is "us"
     public var storeFront = "us"
     
-    public var authenticationHeader: String?
-    public var musicUserToken: String?
+    public var authenticationHeader: String? {
+        didSet {
+            requestInterceptor.authorizationToken = authenticationHeader
+        }
+    }
+    
+    public var musicUserToken: String? {
+        didSet {
+            requestInterceptor.musicUserToken = musicUserToken
+        }
+    }
+    
+    internal var requestInterceptor: RequestInterceptor = RequestInterceptor()
     
     /// Not all responses (such as deleting ratings) will have a response body. For those requests, we handle the response with this method
     func performRequestforVoidResponse(request: AntiochRequest, completion: VoidResponseCompletion) {
         guard let urlRequest = request.urlRequest else { return }
+        let interceptedRequest = requestInterceptor.intercept(request: urlRequest)
         
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        let task = session.dataTask(with: interceptedRequest) { (data, response, error) in
             let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 500
             if statusCode >= 400 {
                 do {
@@ -55,7 +74,9 @@ public class Antioch {
     func performRequest<T>(request: AntiochRequest, forResponseType type: T.Type, completion: ((Result<ResponseRoot<T>?, Error>) -> Void)? ) {
         guard let urlRequest = request.urlRequest else { return }
         
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        let interceptedRequest = requestInterceptor.intercept(request: urlRequest)
+        
+        let task = session.dataTask(with: interceptedRequest) { (data, response, error) in
             do {
                 guard let unwrappedData = data else {
                     let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 500

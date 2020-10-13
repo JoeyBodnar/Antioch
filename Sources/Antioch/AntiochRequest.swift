@@ -30,15 +30,14 @@ class AntiochRequest {
                 print("params were nil")
             }
         } catch {
-            print("couldnt set http body of page view")
+            print("couldnt set http body")
         }
         
-        if let auth = Antioch.shared.authenticationHeader {
-            request.setValue("Bearer \(auth)", forHTTPHeaderField: HTTPHeaderField.authentication.rawValue)
+        if let auth = authHeader {
+            request.setValue("Bearer \(auth)", forHTTPHeaderField: HTTPHeaderField.authorization.rawValue)
         }
         
-        if let token = Antioch.shared.musicUserToken {
-            musicUserTokenHeader = token
+        if let token = musicUserTokenHeader {
             request.setValue(token, forHTTPHeaderField: HTTPHeaderField.musicUserToken.rawValue)
         }
 
