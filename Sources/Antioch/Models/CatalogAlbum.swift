@@ -1,11 +1,3 @@
-//
-//  AppleMusicCatalogAlbum.swift
-//  AppleMusicFrameworkTest
-//
-//  Created by Stephen Bodnar on 8/19/19.
-//  Copyright © 2019 Stephen Bodnar. All rights reserved.
-//
-
 import Foundation
 
 public class CatalogAlbum: AppleMusicResource<CatalogAlbumAttributes, CatalogAlbumRelationships> {

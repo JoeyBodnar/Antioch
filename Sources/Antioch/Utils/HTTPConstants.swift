@@ -1,11 +1,3 @@
-//
-//  NetworkingConstants.swift
-//  Siam
-//
-//  Created by Stephen Bodnar on 12/31/18.
-//  Copyright © 2018 Stephen Bodnar. All rights reserved.
-//
-
 import Foundation
 
 enum HTTPHeaderField: String {

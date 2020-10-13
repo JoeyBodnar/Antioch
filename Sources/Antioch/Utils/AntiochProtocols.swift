@@ -1,11 +1,3 @@
-//
-//  Protocols.swift
-//  Siam
-//
-//  Created by Stephen Bodnar on 8/19/19.
-//  Copyright © 2019 Stephen Bodnar. All rights reserved.
-//
-
 import Foundation
 
 protocol Provider {

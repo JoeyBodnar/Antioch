@@ -1,11 +1,3 @@
-//
-//  AntiochTests.swift
-//  AntiochTests
-//
-//  Created by Stephen Bodnar on 8/2/20.
-//  Copyright © 2020 Stephen Bodnar. All rights reserved.
-//
-
 import XCTest
 
 class AntiochTests: XCTestCase {
