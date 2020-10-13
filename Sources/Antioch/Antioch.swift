@@ -1,11 +1,3 @@
-//
-//  APIManager.swift
-//  AppleMusicFrameworkTest
-//
-//  Created by Stephen Bodnar on 8/19/19.
-//  Copyright © 2019 Stephen Bodnar. All rights reserved.
-//
-
 import Foundation
 
 /// The completion to use when expecting a data response (retrieving songs, playlists, rating, albums, etc)

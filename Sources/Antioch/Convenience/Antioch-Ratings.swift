@@ -1,11 +1,3 @@
-//
-//  APIManagerRatings.swift
-//  AppleMusicFrameworkTest
-//
-//  Created by Stephen Bodnar on 8/25/19.
-//  Copyright © 2019 Stephen Bodnar. All rights reserved.
-//
-
 import Foundation
 
 extension Antioch {

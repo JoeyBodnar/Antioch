@@ -1,10 +1,3 @@
-//
-//  AppleMusicChart.swift
-//  Siam
-//
-//  Created by Stephen Bodnar on 1/30/19.
-//  Copyright © 2019 Stephen Bodnar. All rights reserved.
-//
 import Foundation
 
 public class AppleMusicGenre {
