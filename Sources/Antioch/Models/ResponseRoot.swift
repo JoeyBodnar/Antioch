@@ -9,15 +9,6 @@ public final class ResponseRoot<T: Decodable>: Decodable {
     
     public let next: String?
     public let results: T?
-    
-    /// for unit testing purposes.
-    internal init(data: [T]?) {
-        self.data = data
-        self.errors = nil
-        self.href = nil
-        self.next = nil
-        self.results = nil
-    }
 }
 
 public final class VoidResponse: Decodable {
