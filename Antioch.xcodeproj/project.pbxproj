@@ -24,7 +24,8 @@
 		9F4249D12535A8F500F065BF /* AntiochRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */; };
 		9F4249DB2535AC5500F065BF /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4249DA2535AC5500F065BF /* RequestInterceptor.swift */; };
 		9F4809C82535B15C004F64E7 /* CatalogRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */; };
-		9F764EC725359EDB009DF73C /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */; };
+		9F928ECE2537223100BE60A1 /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */; };
+		9F928ED82537235300BE60A1 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F928ED72537235300BE60A1 /* Mocks.swift */; };
 		OBJ_100 /* AppleMusicLibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* AppleMusicLibraryRouter.swift */; };
 		OBJ_101 /* AppleMusicRatingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* AppleMusicRatingRouter.swift */; };
 		OBJ_102 /* AppleMusicSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* AppleMusicSearchRouter.swift */; };
@@ -92,6 +93,7 @@
 		9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRouterTests.swift; sourceTree = "<group>"; };
 		9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Protocol.swift"; sourceTree = "<group>"; };
 		9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiochRequestTests.swift; sourceTree = "<group>"; };
+		9F928ED72537235300BE60A1 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		"Antioch::Antioch::Product" /* Antioch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Antioch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Antioch::AntiochTests::Product" /* AntiochTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntiochTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				OBJ_58 /* AntiochTests.swift */,
 				9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */,
 				9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */,
+				9F928ED72537235300BE60A1 /* Mocks.swift */,
 			);
 			name = AntiochTests;
 			path = Tests/AntiochTests;
@@ -388,6 +391,7 @@
 				9F4249D12535A8F500F065BF /* AntiochRequestTests.swift in Sources */,
 				9F4809C82535B15C004F64E7 /* CatalogRouterTests.swift in Sources */,
 				OBJ_125 /* AntiochTests.swift in Sources */,
+				9F928ED82537235300BE60A1 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +415,7 @@
 				OBJ_80 /* CatalogArtist.swift in Sources */,
 				OBJ_81 /* CatalogPlaylist.swift in Sources */,
 				OBJ_82 /* CatalogSong.swift in Sources */,
+				9F928ECE2537223100BE60A1 /* URLSession+Protocol.swift in Sources */,
 				OBJ_83 /* Chart.swift in Sources */,
 				OBJ_84 /* Curator.swift in Sources */,
 				OBJ_85 /* EditorialNotes.swift in Sources */,
@@ -419,7 +424,6 @@
 				OBJ_88 /* LibraryPlaylist.swift in Sources */,
 				OBJ_89 /* LibrarySong.swift in Sources */,
 				OBJ_90 /* PlayParameters.swift in Sources */,
-				9F764EC725359EDB009DF73C /* URLSession+Protocol.swift in Sources */,
 				OBJ_91 /* RadioStation.swift in Sources */,
 				OBJ_92 /* Rating.swift in Sources */,
 				OBJ_93 /* Recommendation.swift in Sources */,

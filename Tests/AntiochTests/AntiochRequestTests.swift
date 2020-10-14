@@ -44,21 +44,3 @@ final class AntiochRequestTests: XCTestCase {
         XCTAssertTrue(urlRequest.allHTTPHeaderFields!["Content-Type"] == "application/json")
     }
 }
-
-private final class EmptyContent: Codable {}
-
-private enum MockProvider: Provider {
-    case test
-    case testPost
-    
-    var path: String {
-        switch self {
-        case .test: return "\(baseURL)me"
-        case .testPost: return "\(baseURL)me/post"
-        }
-    }
-    
-    var baseURL: String {
-        return "https://music.apple.com/"
-    }
-}
