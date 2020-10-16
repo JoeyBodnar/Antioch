@@ -1,25 +1,44 @@
 import XCTest
+@testable import Antioch
 
 class AntiochTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testConfigureSetsStoreFrontAndAuthenticationHeader() {
+        let client = Antioch()
+        client.configure(storeFront: "us", authenticationHeader: "mock-token-here")
+        
+        XCTAssertTrue(client.authenticationHeader == "mock-token-here")
+        XCTAssertTrue(client.storeFront == "us")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    
+    func testPerformRequestVoidResponseSuccess() {
+        let mockSession = MockURLSession()
+        mockSession.response = HTTPURLResponse(url: URL(string: "https://apple.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+        
+        let client = Antioch(session: mockSession, dispatchQueue: .main)
+        
+        var successInvoked = false
+        client.performRequestforVoidResponse(request: AntiochRequest(endPoint: MockProvider.test1, method: .get)) { success, error in
+            successInvoked = success
         }
+        
+        XCTAssertTrue(successInvoked)
     }
-
+    
+    func testPerformRequestVoidResponseFailure() {
+        let mockSession = MockURLSession()
+        mockSession.response = HTTPURLResponse(url: URL(string: "https://apple.com")!, statusCode: 400, httpVersion: nil, headerFields: nil)
+        
+        let client = Antioch(session: mockSession, dispatchQueue: .main)
+        
+        var successInvoked = false
+        var failureInvoked = false
+        client.performRequestforVoidResponse(request: AntiochRequest(endPoint: MockProvider.test1, method: .get)) { success, error in
+            successInvoked = success
+            failureInvoked = error != nil
+        }
+        
+        XCTAssertFalse(successInvoked)
+        XCTAssertTrue(failureInvoked)
+    }
 }

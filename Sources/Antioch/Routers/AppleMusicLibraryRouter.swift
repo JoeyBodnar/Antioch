@@ -61,16 +61,18 @@ public enum LibraryRouter: Provider {
     }
     
     // Example path: ids[albums]=1106659171&ids[songs]=1107054256&ids[music-videos]=267079116
-    fileprivate func pathForAddItem(withItems items: [AddableItem]) -> String {
+    internal func pathForAddItem(withItems items: [AddableItem]) -> String {
         var path = ""
         var index = 0
         for i in items {
             let idsJoined = i.ids.joined(separator: ",")
             path += "ids[\(i.type.rawValue)]=\(idsJoined)"
             
-            if index <= (items.count - 2) { path += "&" }
+            if index < (items.count - 1) {
+                path += "&"
+            }
             
-            index += 0
+            index += 1
         }
         
         return path
