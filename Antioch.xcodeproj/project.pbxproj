@@ -24,6 +24,7 @@
 		9F4249D12535A8F500F065BF /* AntiochRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */; };
 		9F4249DB2535AC5500F065BF /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4249DA2535AC5500F065BF /* RequestInterceptor.swift */; };
 		9F4809C82535B15C004F64E7 /* CatalogRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */; };
+		9F67709D2539BA3F0069187D /* LibraryRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67709C2539BA3F0069187D /* LibraryRouterTests.swift */; };
 		9F928ECE2537223100BE60A1 /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */; };
 		9F928ED82537235300BE60A1 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F928ED72537235300BE60A1 /* Mocks.swift */; };
 		OBJ_100 /* AppleMusicLibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* AppleMusicLibraryRouter.swift */; };
@@ -91,6 +92,7 @@
 /* Begin PBXFileReference section */
 		9F4249DA2535AC5500F065BF /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRouterTests.swift; sourceTree = "<group>"; };
+		9F67709C2539BA3F0069187D /* LibraryRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRouterTests.swift; sourceTree = "<group>"; };
 		9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Protocol.swift"; sourceTree = "<group>"; };
 		9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiochRequestTests.swift; sourceTree = "<group>"; };
 		9F928ED72537235300BE60A1 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				OBJ_57 /* Info.plist */,
 				OBJ_58 /* AntiochTests.swift */,
 				9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */,
+				9F67709C2539BA3F0069187D /* LibraryRouterTests.swift */,
 				9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */,
 				9F928ED72537235300BE60A1 /* Mocks.swift */,
 			);
@@ -388,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				9F67709D2539BA3F0069187D /* LibraryRouterTests.swift in Sources */,
 				9F4249D12535A8F500F065BF /* AntiochRequestTests.swift in Sources */,
 				9F4809C82535B15C004F64E7 /* CatalogRouterTests.swift in Sources */,
 				OBJ_125 /* AntiochTests.swift in Sources */,
