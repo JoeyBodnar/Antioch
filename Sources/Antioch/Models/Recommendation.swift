@@ -15,7 +15,7 @@ public final class Recommendation: AppleMusicResource<RecommendationAttributes, 
     }
     
     /// Get all CatalogPlaylists or CatalogAlbums from the recommendations in a flat array
-    func collections<T: CollectionResource>(ofType type: T.Type) -> [T] {
+    public func collections<T: CollectionResource>(ofType type: T.Type) -> [T] {
         var collections: [T] = []
 
         if let all = relationships?.contents.data {
@@ -32,7 +32,7 @@ public final class Recommendation: AppleMusicResource<RecommendationAttributes, 
 
 extension Array where Element == Recommendation {
     
-    func collections<T: CollectionResource>(ofType type: T.Type) -> [T] {
+    public func collections<T: CollectionResource>(ofType type: T.Type) -> [T] {
         return self.map { $0.collections(ofType: type) }.flatMap { $0 }
     }
 }
