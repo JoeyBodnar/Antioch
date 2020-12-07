@@ -47,6 +47,7 @@ public enum AppleMusicItemType: String, Codable {
     case genres = "genres"
     case curators = "curators"
     case appleCurators = "apple-curators"
+    case musicVideos = "music-videos"
     
     case personalRecommendation = "personal-recommendation"
     
