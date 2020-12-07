@@ -27,12 +27,12 @@ public final class CatalogSongAttributes: Decodable {
     public let name: String
     public let playParams: PlayParameters?
     public let releaseDate: String?
-    public let trackNumber: Int
-    public let url: String
+    public let trackNumber: Int?
+    public let url: String?
     public var contentRating: String?
 }
 
 public final class CatalogSongRelationships: Decodable {
-    public let albums: Relationship<CatalogAlbum>
-    public let artists: Relationship<CatalogArtist>
+    public let albums: Relationship<CatalogAlbum>?
+    public let artists: Relationship<CatalogArtist>?
 }

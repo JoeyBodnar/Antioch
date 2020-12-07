@@ -3,7 +3,7 @@ import Foundation
 public class CatalogPlaylist: AppleMusicResource<CatalogPlaylistAttributes, CatalogPlaylistRelationships> {
     
     public var songs: [CatalogSong] {
-        return relationships?.tracks.data ?? []
+        return relationships?.tracks?.data ?? []
     }
     
     public override init(id: String, type: AppleMusicItemType) {
@@ -30,6 +30,6 @@ public class CatalogPlaylistAttributes: Decodable {
 }
 
 public class CatalogPlaylistRelationships: Decodable {
-    public let tracks: Relationship<CatalogSong>
-    public let curator: Relationship<Curator>
+    public let tracks: Relationship<CatalogSong>?
+    public let curator: Relationship<Curator>?
 }
