@@ -16,6 +16,18 @@ extension Antioch {
         }
     }
     
+    public func libraryPlaylists(forIds ids: [String], completion: DataCompletion<[LibraryPlaylist]>) {
+        let request = AntiochRequest(endPoint: LibraryRouter.getMultipleLibraryResources(LibraryPlaylist.self, ids), method: .get)
+        performRequest(request: request, forResponseType: LibraryPlaylist.self) { result in
+            switch result {
+            case .success(let response):
+                completion?(response?.data, nil)
+            case .failure(let error):
+                completion?(nil, error)
+            }
+        }
+    }
+    
     /// Get the songs for a library playlsit by passing in the playlist's id. We need this method because
     /// when you retrieve a library playlist, the API does not pass back the songs with it. So we need to retrieve them separately
     public func songs(forLibraryPlaylistId playlistId: String, withLimit limit: Int, andOffset offset: Int, completion: DataCompletion<[LibrarySong]>) {
