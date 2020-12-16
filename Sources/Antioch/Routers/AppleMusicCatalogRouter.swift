@@ -3,6 +3,7 @@ public enum CatalogRouter: Provider {
     /// get a catalog playlist, album, song, or artist
     case getCatalogResource(CatalogQueryable.Type, String)
     case getMultipleCatalogResources(CatalogQueryable.Type, [String]) // string is array of ids
+    case getNextResource(url: String)
     
     /// string value is the storefront. Used so you can retrieve different countries' charts
     case charts([IncludeParameter], Int, String = Antioch.shared.storeFront) // types, limit, offset, storeFront
@@ -17,6 +18,8 @@ public enum CatalogRouter: Provider {
         case .getMultipleCatalogResources(let resource, let ids):
             let joinedIds = ids.joined(separator: ",") // of syntax id1,id2,id3 etc
             return "\(baseURL)\(getResourcePath(for: resource))?ids=\(joinedIds)"
+        case .getNextResource(let nextPath):
+            return "\(RoutingConstants.scheme)://\(RoutingConstants.base)\(nextPath)"
         case .charts(let types, let limit, let storeFront):
             let allTypes = types.asString()
             let base = "\(RoutingConstants.appleMusicBaseURL)/catalog/\(storeFront)/"
