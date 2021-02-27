@@ -39,7 +39,7 @@
 		OBJ_125 /* AntiochTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* AntiochTests.swift */; };
 		OBJ_127 /* Antioch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Antioch::Antioch::Product" /* Antioch.framework */; };
 		OBJ_68 /* Antioch.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Antioch.swift */; };
-		OBJ_69 /* AntiochRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* AntiochRequest.swift */; };
+		OBJ_69 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* RequestBuilder.swift */; };
 		OBJ_70 /* Antioch-Catalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Antioch-Catalog.swift */; };
 		OBJ_71 /* Antioch-History.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Antioch-History.swift */; };
 		OBJ_72 /* Antioch-Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Antioch-Library.swift */; };
@@ -100,7 +100,7 @@
 		"Antioch::AntiochTests::Product" /* AntiochTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AntiochTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		OBJ_11 /* Antioch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Antioch.swift; sourceTree = "<group>"; };
-		OBJ_12 /* AntiochRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiochRequest.swift; sourceTree = "<group>"; };
+		OBJ_12 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		OBJ_14 /* Antioch-Catalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Antioch-Catalog.swift"; sourceTree = "<group>"; };
 		OBJ_15 /* Antioch-History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Antioch-History.swift"; sourceTree = "<group>"; };
 		OBJ_16 /* Antioch-Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Antioch-Library.swift"; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 				OBJ_9 /* Antioch.h */,
 				OBJ_10 /* Info.plist */,
 				OBJ_11 /* Antioch.swift */,
-				OBJ_12 /* AntiochRequest.swift */,
+				OBJ_12 /* RequestBuilder.swift */,
 				OBJ_13 /* Convenience */,
 				OBJ_19 /* Models */,
 				OBJ_44 /* Routers */,
@@ -405,7 +405,7 @@
 			files = (
 				OBJ_68 /* Antioch.swift in Sources */,
 				9F4249DB2535AC5500F065BF /* RequestInterceptor.swift in Sources */,
-				OBJ_69 /* AntiochRequest.swift in Sources */,
+				OBJ_69 /* RequestBuilder.swift in Sources */,
 				OBJ_70 /* Antioch-Catalog.swift in Sources */,
 				OBJ_71 /* Antioch-History.swift in Sources */,
 				OBJ_72 /* Antioch-Library.swift in Sources */,

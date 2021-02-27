@@ -43,8 +43,10 @@ public class Antioch {
     internal var requestInterceptor: RequestInterceptor = RequestInterceptor()
     
     /// Not all responses (such as deleting ratings) will have a response body. For those requests, we handle the response with this method
-    func performRequestforVoidResponse(request: AntiochRequest, completion: VoidResponseCompletion) {
-        guard let urlRequest = request.urlRequest else { return }
+    func performRequestforVoidResponse(request: URLRequest?, completion: VoidResponseCompletion) {
+        guard let urlRequest = request else {
+            return
+        }
         let interceptedRequest = requestInterceptor.intercept(request: urlRequest)
         
         let task = session.dataTask(with: interceptedRequest) { (data, response, error) in
@@ -70,8 +72,8 @@ public class Antioch {
         task.resume()
     }
     
-    func performRequest<T>(request: AntiochRequest, forResponseType type: T.Type, completion: ((Result<ResponseRoot<T>?, Error>) -> Void)? ) {
-        guard let urlRequest = request.urlRequest else { return }
+    func performRequest<T>(request: URLRequest?, forResponseType type: T.Type, completion: ((Result<ResponseRoot<T>?, Error>) -> Void)? ) {
+        guard let urlRequest = request else { return }
         
         let interceptedRequest = requestInterceptor.intercept(request: urlRequest)
         

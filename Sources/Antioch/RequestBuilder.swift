@@ -1,6 +1,6 @@
 import Foundation
 
-class AntiochRequest {
+class RequestBuilder {
     var method: HTTPMethod
     var endPoint: Provider
     
