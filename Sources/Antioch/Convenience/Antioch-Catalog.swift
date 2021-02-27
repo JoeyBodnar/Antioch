@@ -17,7 +17,7 @@ extension Antioch {
     
     /// Get an item of type T from the Apple Music Catalog by its id
     public func catalogItem<T: Decodable & CatalogQueryable>(forId id: String, ofType type: T.Type, completion: DataCompletion<T>) {
-        let request = AntiochRequest(endPoint: CatalogRouter.getCatalogResource(type, id), method: .get)
+        let request = AntiochRequest(endPoint: CatalogRouter.getCatalogResource(type: type, id: id, storefront: self.storeFront), method: .get)
         performRequest(request: request, forResponseType: type) { result in
             switch result {
             case .success(let response):
@@ -30,7 +30,7 @@ extension Antioch {
     
     /// Pass in an array of ids and their type, and  get the  catalog items.
     public func catalogItems<T: Decodable & CatalogQueryable>(forIds ids: [String], ofType type: T.Type, completion: CollectionDataCompletion<T>) {
-        let request = AntiochRequest(endPoint: CatalogRouter.getMultipleCatalogResources(type, ids), method: .get)
+        let request = AntiochRequest(endPoint: CatalogRouter.getMultipleCatalogResources(type: type, ids: ids, storefront: self.storeFront), method: .get)
         performRequest(request: request, forResponseType: type) { (result) in
             switch result {
             case .success(let response):
@@ -43,7 +43,7 @@ extension Antioch {
     
     /// Get the Apple Music catalog charts. Valid values for the types parameter  are songs, playlists, and albums
     public func charts(types: [IncludeParameter], storeFront: String, limit: Int, completion: DataCompletion<ChartResponse>) {
-        let request = AntiochRequest(endPoint: CatalogRouter.charts(types, limit, storeFront), method: .get)
+        let request = AntiochRequest(endPoint: CatalogRouter.charts(types: types, limit: limit, storefront: storeFront), method: .get)
         performRequest(request: request, forResponseType: ChartResponse.self) { result in
             switch result {
             case .success(let response):
@@ -55,7 +55,7 @@ extension Antioch {
     }
     
     public func chartsForGenre(genre: AppleMusicGenre, types: [IncludeParameter], limit: Int, completion: DataCompletion<ChartResponse>) {
-        let request = AntiochRequest(endPoint: CatalogRouter.chartsForGenre(genre, types, limit), method: .get)
+        let request = AntiochRequest(endPoint: CatalogRouter.chartsForGenre(genre: genre, types: types, limit: limit, storefront: storeFront), method: .get)
         performRequest(request: request, forResponseType: ChartResponse.self) { result in
             switch result {
             case .success(let response):

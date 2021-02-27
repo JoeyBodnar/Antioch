@@ -1,4 +1,5 @@
 import Foundation
+
 /// The completion to use when expecting a data response (retrieving songs, playlists, rating, albums, etc)
 public typealias DataCompletion<T> = ((_ item: T?, _ error: Error?) -> Void)?
 
@@ -11,15 +12,13 @@ public typealias VoidResponseCompletion = ((_ success: Bool, _ error: Error?) ->
 
 public class Antioch {
     
-    public static let shared = Antioch()
-    
-    internal let session: URLSessionProtocol
-    internal let dispatchQueue: DispatchQueue
+    private let session: URLSessionProtocol
+    private let dispatchQueue: DispatchQueue
     
     public init(session: URLSessionProtocol = URLSession.shared, dispatchQueue: DispatchQueue = .main) {
-            self.session = session
-            self.dispatchQueue = dispatchQueue
-        }
+        self.session = session
+        self.dispatchQueue = dispatchQueue
+    }
     
     public func configure(storeFront: String, authenticationHeader: String) {
         self.storeFront = storeFront
@@ -27,7 +26,7 @@ public class Antioch {
     }
     
     /// The storefront for user-specific requests. Default is "us"
-    public var storeFront = "us"
+    private(set) var storeFront = "us"
     
     public var authenticationHeader: String? {
         didSet {
