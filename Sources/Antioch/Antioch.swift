@@ -1,12 +1,7 @@
 import Foundation
 
 /// The completion to use when expecting a data response (retrieving songs, playlists, rating, albums, etc)
-//public typealias DataCompletion<T> = ((_ item: T?, _ error: Error?) -> Void)?
-
 public typealias DataCompletion<T: Decodable> = ((Result<ResponseRoot<T>, Error>) -> Void)?
-
-/// the completion to use when retrieving an array of items (like multiple stations, songs, etc at once)
-//public typealias CollectionDataCompletion<T> = ((_ items: [T]?, _ error: Error?) -> Void)?
 
 /// the completion to use when we dont expect a response body on success, but just a status code (adding items
 /// to playlist, adding to library)
@@ -97,10 +92,9 @@ public class Antioch {
                     completion?(.success(results))
                 }
             } catch let error {
-                print("Antioch error:: error for request \(request), with error: \(error)")
-                if let unwrappedData = data {
-                    let json = try? JSONSerialization.jsonObject(with: unwrappedData, options: .allowFragments)
-                    print("json retrieved that failed to parse is: \(json) for url \(urlRequest.url?.absoluteString)")
+                print("Antioch error:: error for request \(String(describing: request)), with error: \(error)")
+                if let unwrappedData = data, let jsonString = String(data: unwrappedData, encoding: .utf8) {
+                    print("json retrieved that failed to parse is: \(jsonString) for url \(String(describing: urlRequest.url?.absoluteString))")
                 }
                 
                 completion?(.failure(error))

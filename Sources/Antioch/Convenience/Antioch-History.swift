@@ -7,13 +7,6 @@ extension Antioch {
         let builder: RequestBuilder = RequestBuilder(endPoint: HistoryRouter.recentStations, method: .get)
         performRequest(request: builder.urlRequest, forResponseType: RadioStation.self) { result in
             completion?(result)
-            /*switch result {
-            case .success(let response):
-                completion?(response?.data, nil)
-            case .failure(let error):
-                completion?(nil, error)
-            }*/
         }
     }
-    
 }
