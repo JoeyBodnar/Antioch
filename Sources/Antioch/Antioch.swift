@@ -1,10 +1,12 @@
 import Foundation
 
 /// The completion to use when expecting a data response (retrieving songs, playlists, rating, albums, etc)
-public typealias DataCompletion<T> = ((_ item: T?, _ error: Error?) -> Void)?
+//public typealias DataCompletion<T> = ((_ item: T?, _ error: Error?) -> Void)?
+
+public typealias DataCompletion<T: Decodable> = ((Result<ResponseRoot<T>, Error>) -> Void)?
 
 /// the completion to use when retrieving an array of items (like multiple stations, songs, etc at once)
-public typealias CollectionDataCompletion<T> = ((_ items: [T]?, _ error: Error?) -> Void)?
+//public typealias CollectionDataCompletion<T> = ((_ items: [T]?, _ error: Error?) -> Void)?
 
 /// the completion to use when we dont expect a response body on success, but just a status code (adding items
 /// to playlist, adding to library)
@@ -72,7 +74,7 @@ public class Antioch {
         task.resume()
     }
     
-    func performRequest<T>(request: URLRequest?, forResponseType type: T.Type, completion: ((Result<ResponseRoot<T>?, Error>) -> Void)? ) {
+    func performRequest<T>(request: URLRequest?, forResponseType type: T.Type, completion: ((Result<ResponseRoot<T>, Error>) -> Void)? ) {
         guard let urlRequest = request else { return }
         
         let interceptedRequest = requestInterceptor.intercept(request: urlRequest)

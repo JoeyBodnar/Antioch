@@ -7,12 +7,14 @@ extension Antioch {
         let endpoint: SearchRouter = SearchRouter.searchCatalog(searchTerm: term, types: types, limit: limit, offset: offset, storefront: self.storeFront)
         let builder: RequestBuilder = RequestBuilder(endPoint: endpoint, method: .get)
         performRequest(request: builder.urlRequest, forResponseType: CatalogSearchResults.self) { result in
-            switch result {
+            completion?(result)
+            /*switch result {
             case .success(let response):
-                completion?(response?.results, nil)
+               // completion(.success(response!))
+                //completion?(response?.results, nil)
             case .failure(let error):
-                completion?(nil, error)
-            }
+                //completion?(nil, error)
+            }*/
         }
     }
     
@@ -20,26 +22,28 @@ extension Antioch {
     public func searchLibrary(forTerm term: String, includingTypes types: [IncludeParameter.Library], withLimit limit: Int, andOffset offset: Int, completion: DataCompletion<LibrarySearchResults>) {
         let builder: RequestBuilder = RequestBuilder(endPoint: SearchRouter.searchLibrary(searchTerm: term, types: types, linit: limit, offset: offset), method: .get)
         performRequest(request: builder.urlRequest, forResponseType: LibrarySearchResults.self) { result in
-            switch result {
+            completion?(result)
+            /*switch result {
             case .success(let response):
-                completion?(response?.results, nil)
+                //completion?(response?.results, nil)
             case .failure(let error):
-                completion?(nil, error)
-            }
+                //completion?(nil, error)
+            }*/
         }
     }
     
-    public func searchHints(forTerm term: String, completion: DataCompletion<[String]>) {
+    public func searchHints(forTerm term: String, completion: DataCompletion<SearchHints>) {
         let endpoint: SearchRouter = SearchRouter.searchHints(searchTerm: term, storefront: self.storeFront)
         let builder: RequestBuilder = RequestBuilder(endPoint: endpoint, method: .get)
         performRequest(request: builder.urlRequest, forResponseType: SearchHints.self) { result in
-            switch result {
+            completion?(result)
+            /*switch result {
             case .success(let response):
                 let terms = response?.results?.terms ?? []
-                completion?(terms, nil)
+                //completion?(terms, nil)
             case .failure(let error):
-                completion?([], error)
-            }
+                //completion?([], error)
+            }*/
         }
     }
     

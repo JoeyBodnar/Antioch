@@ -8,12 +8,7 @@ extension Antioch {
         builder.params = ["type": "rating", "attributes": ["value": rating.rawValue]]
         
         performRequest(request: builder.urlRequest, forResponseType: Rating.self) { result in
-            switch result {
-            case .success(let response):
-                completion?(response?.data?.first, nil)
-            case .failure(let error):
-                completion?(nil, error)
-            }
+            completion?(result)
         }
     }
     
@@ -22,15 +17,17 @@ extension Antioch {
     public func getRating(for id: String, ofType type: AppleMusicItemType, completion: DataCompletion<Rating>) {
         let builder: RequestBuilder = RequestBuilder(endPoint: RatingRouter.rateWithId(type, id), method: .get)
         performRequest(request: builder.urlRequest, forResponseType: Rating.self) { result in
+            completion?(result)
             
-            let neitherLikeNorDislikeRating = Rating(id: "0", type: .ratings)
+            /*let neitherLikeNorDislikeRating = Rating(id: "0", type: .ratings)
             switch result {
             case .success(let response):
+                completion?(.success(response))
                 let rating = response?.data?.first ?? neitherLikeNorDislikeRating
                 completion?(rating, nil)
             case .failure(let error):
                 completion?(neitherLikeNorDislikeRating, error)
-            }
+            }*/
         }
     }
     
@@ -38,28 +35,29 @@ extension Antioch {
     public func getRating<T: Rateable & Decodable>(forItem item: T, completion: DataCompletion<Rating>) {
         let builder: RequestBuilder = RequestBuilder(endPoint: RatingRouter.rate(item), method: .get)
         performRequest(request: builder.urlRequest, forResponseType: Rating.self) { result in
-            
-            let neitherLikeNorDislikeRating = Rating(id: "0", type: .ratings)
+            completion?(result)
+            /*let neitherLikeNorDislikeRating = Rating(id: "0", type: .ratings)
             switch result {
             case .success(let response):
                 let rating = response?.data?.first ?? neitherLikeNorDislikeRating
                 completion?(rating, nil)
             case .failure(let error):
                 completion?(neitherLikeNorDislikeRating, error)
-            }
+            }*/
         }
     }
     
     /// Get multiple ratings by passing in the type and the ids for the items whose ratings you want to retrieve
-    public func getMultipleRatings(forType type: AppleMusicItemType, ids: [String], completion: CollectionDataCompletion<Rating>) {
+    public func getMultipleRatings(forType type: AppleMusicItemType, ids: [String], completion: DataCompletion<Rating>) {
         let builder: RequestBuilder = RequestBuilder(endPoint: RatingRouter.multipleRatings(type, ids), method: .get)
         performRequest(request: builder.urlRequest, forResponseType: Rating.self) { result in
-            switch result {
+            completion?(result)
+            /*switch result {
             case .success(let response):
                 completion?(response?.data, nil)
             case .failure(let error):
                 completion?(nil, error)
-            }
+            }*/
         }
     }
     
