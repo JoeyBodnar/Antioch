@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "Antioch::Antioch"
-               BuildableName = "Antioch.framework"
-               BlueprintName = "Antioch"
-               ReferencedContainer = "container:Antioch.xcodeproj">
+               BuildableName = "AppleMusicKit.framework"
+               BlueprintName = "AppleMusicKit"
+               ReferencedContainer = "container:AppleMusicKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "Antioch::AntiochTests"
-               BuildableName = "AntiochTests.xctest"
-               BlueprintName = "AntiochTests"
-               ReferencedContainer = "container:Antioch.xcodeproj">
+               BuildableName = "AppleMusicKitTests.xctest"
+               BlueprintName = "AppleMusicKitTests"
+               ReferencedContainer = "container:AppleMusicKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

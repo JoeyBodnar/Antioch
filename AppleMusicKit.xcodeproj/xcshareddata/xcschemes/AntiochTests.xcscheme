@@ -16,10 +16,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9FDDD66524D6B865007EB4D4"
-               BuildableName = "AntiochTests.xctest"
-               BlueprintName = "AntiochTests"
-               ReferencedContainer = "container:Antioch.xcodeproj">
+               BlueprintIdentifier = "Antioch::AntiochTests"
+               BuildableName = "AppleMusicKitTests.xctest"
+               BlueprintName = "AppleMusicKitTests"
+               ReferencedContainer = "container:AppleMusicKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>

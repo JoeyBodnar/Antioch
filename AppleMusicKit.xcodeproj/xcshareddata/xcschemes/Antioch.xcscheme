@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9F2203142391633B00C11F47"
-               BuildableName = "Antioch.framework"
-               BlueprintName = "Antioch"
-               ReferencedContainer = "container:Antioch.xcodeproj">
+               BlueprintIdentifier = "Antioch::Antioch"
+               BuildableName = "AppleMusicKit.framework"
+               BlueprintName = "AppleMusicKit"
+               ReferencedContainer = "container:AppleMusicKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -43,10 +43,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F2203142391633B00C11F47"
-            BuildableName = "Antioch.framework"
-            BlueprintName = "Antioch"
-            ReferencedContainer = "container:Antioch.xcodeproj">
+            BlueprintIdentifier = "Antioch::Antioch"
+            BuildableName = "AppleMusicKit.framework"
+            BlueprintName = "AppleMusicKit"
+            ReferencedContainer = "container:AppleMusicKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </LaunchAction>
@@ -59,10 +59,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9F2203142391633B00C11F47"
-            BuildableName = "Antioch.framework"
-            BlueprintName = "Antioch"
-            ReferencedContainer = "container:Antioch.xcodeproj">
+            BlueprintIdentifier = "Antioch::Antioch"
+            BuildableName = "AppleMusicKit.framework"
+            BlueprintName = "AppleMusicKit"
+            ReferencedContainer = "container:AppleMusicKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
