@@ -5,7 +5,7 @@ public typealias DataCompletion<T: Decodable> = ((Result<ResponseRoot<T>, Error>
 
 /// the completion to use when we dont expect a response body on success, but just a status code (adding items
 /// to playlist, adding to library)
-public typealias VoidResponseCompletion = ((_ success: Bool, _ error: Error?) -> Void)?
+public typealias VoidResponseCompletion = ((Result<Void, Error>) -> Void)?
 
 public class Antioch {
     
@@ -52,18 +52,17 @@ public class Antioch {
                 do {
                     guard let unwrappedData = data else {
                         let unwrappedError = error ?? UnknownAntiochError(message: "Error retrieving data. Could not retrieve data task error. Status code: \(statusCode)")
-                        completion?(false, unwrappedError)
+                        completion?(.failure(unwrappedError))
                         return
                     }
                     
                     let decoder = JSONDecoder()
                     let error = try decoder.decode(AppleMusicError.self, from: unwrappedData)
-                    completion?(false, error)
-                } catch {
-                    completion?(false, nil)
-                }
-            } else  {
-                completion?(statusCode <= 204, nil)
+                    completion?(.failure(error))
+                    //completion?(false, error)
+                } catch { }
+            } else {
+                completion?(.success(()))
             }
         }
         task.resume()

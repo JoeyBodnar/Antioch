@@ -15,7 +15,7 @@ extension Antioch {
     }
     
     /// Add items to your library by passing in an array of AddableItem objects
-    public func addToLibrary(items: [AddableItem], completion: ((_ success: Bool, _ error: Error?) -> Void)?) {
+    public func addToLibrary(items: [AddableItem], completion: VoidResponseCompletion) {
         let builder: RequestBuilder = RequestBuilder(endPoint: LibraryRouter.addItemsToLibrary(items), method: .post)
         performRequestforVoidResponse(request: builder.urlRequest, completion: completion)
     }
