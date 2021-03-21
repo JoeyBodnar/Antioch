@@ -21,10 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		9F4249D12535A8F500F065BF /* AntiochRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */; };
 		9F4249DB2535AC5500F065BF /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4249DA2535AC5500F065BF /* RequestInterceptor.swift */; };
-		9F4809C82535B15C004F64E7 /* CatalogRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */; };
-		9F67709D2539BA3F0069187D /* LibraryRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F67709C2539BA3F0069187D /* LibraryRouterTests.swift */; };
+		9F68CFB4260628EA00B6749B /* RequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F68CFB3260628EA00B6749B /* RequestBuilderTests.swift */; };
 		9F928ECE2537223100BE60A1 /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */; };
 		9F928ED82537235300BE60A1 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F928ED72537235300BE60A1 /* Mocks.swift */; };
 		OBJ_100 /* AppleMusicLibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* AppleMusicLibraryRouter.swift */; };
@@ -36,7 +34,6 @@
 		OBJ_106 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* HTTPMethod.swift */; };
 		OBJ_107 /* RoutingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* RoutingConstants.swift */; };
 		OBJ_114 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_125 /* AntiochTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* AntiochTests.swift */; };
 		OBJ_127 /* AppleMusicKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Antioch::Antioch::Product" /* AppleMusicKit.framework */; };
 		OBJ_68 /* AppleMusicKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* AppleMusicKit.swift */; };
 		OBJ_69 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* RequestBuilder.swift */; };
@@ -91,10 +88,8 @@
 
 /* Begin PBXFileReference section */
 		9F4249DA2535AC5500F065BF /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
-		9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRouterTests.swift; sourceTree = "<group>"; };
-		9F67709C2539BA3F0069187D /* LibraryRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRouterTests.swift; sourceTree = "<group>"; };
+		9F68CFB3260628EA00B6749B /* RequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
 		9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Protocol.swift"; sourceTree = "<group>"; };
-		9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiochRequestTests.swift; sourceTree = "<group>"; };
 		9F928ED72537235300BE60A1 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		"Antioch::Antioch::Product" /* AppleMusicKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppleMusicKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Antioch::AntiochTests::Product" /* AppleMusicKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = AppleMusicKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,7 +135,6 @@
 		OBJ_53 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		OBJ_54 /* RoutingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingConstants.swift; sourceTree = "<group>"; };
 		OBJ_57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		OBJ_58 /* AntiochTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiochTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_62 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_9 /* AppleMusicKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleMusicKit.h; sourceTree = "<group>"; };
@@ -256,11 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_57 /* Info.plist */,
-				OBJ_58 /* AntiochTests.swift */,
-				9F9234F52535A7D800CFB2AA /* AntiochRequestTests.swift */,
-				9F67709C2539BA3F0069187D /* LibraryRouterTests.swift */,
-				9F4809C72535B15C004F64E7 /* CatalogRouterTests.swift */,
 				9F928ED72537235300BE60A1 /* Mocks.swift */,
+				9F68CFB3260628EA00B6749B /* RequestBuilderTests.swift */,
 			);
 			name = AppleMusicKitTests;
 			path = Tests/AppleMusicKitTests;
@@ -391,10 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				9F67709D2539BA3F0069187D /* LibraryRouterTests.swift in Sources */,
-				9F4249D12535A8F500F065BF /* AntiochRequestTests.swift in Sources */,
-				9F4809C82535B15C004F64E7 /* CatalogRouterTests.swift in Sources */,
-				OBJ_125 /* AntiochTests.swift in Sources */,
+				9F68CFB4260628EA00B6749B /* RequestBuilderTests.swift in Sources */,
 				9F928ED82537235300BE60A1 /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,7 +496,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Antioch.xcodeproj/AntiochTests_Info.plist;
+				INFOPLIST_FILE = AppleMusicKit.xcodeproj/AppleMusicKitTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -518,7 +506,7 @@
 				PRODUCT_NAME = AppleMusicKitTests;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = AntiochTests;
+				TARGET_NAME = AppleMusicKitTests;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -534,7 +522,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 				);
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Antioch.xcodeproj/AntiochTests_Info.plist;
+				INFOPLIST_FILE = AppleMusicKit.xcodeproj/AppleMusicKitTests_Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -544,7 +532,7 @@
 				PRODUCT_NAME = AppleMusicKitTests;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
 				SWIFT_VERSION = 5.0;
-				TARGET_NAME = AntiochTests;
+				TARGET_NAME = AppleMusicKitTests;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};

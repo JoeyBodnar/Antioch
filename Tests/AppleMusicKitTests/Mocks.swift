@@ -1,5 +1,5 @@
 import Foundation
-@testable import Antioch
+@testable import AppleMusicKit
 
 enum MockProvider: Provider {
     
@@ -9,7 +9,7 @@ enum MockProvider: Provider {
     
     var path: String {
         switch self {
-        case .test1: return "/test1"
+        case .test1: return "\(baseURL)test1"
         case .test: return "\(baseURL)me"
         case .testPost: return "\(baseURL)me/post"
         }

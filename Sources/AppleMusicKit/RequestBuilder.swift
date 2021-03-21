@@ -26,11 +26,9 @@ class RequestBuilder {
             if let postBody = params {
                 request.httpBody = try JSONSerialization.data(withJSONObject: postBody, options: JSONSerialization.WritingOptions.prettyPrinted)
             }
-            else {
-                print("params were nil")
-            }
         } catch {
             print("couldnt set http body")
+            return nil
         }
         
         if let auth = authHeader {

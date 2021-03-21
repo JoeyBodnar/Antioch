@@ -2,15 +2,6 @@ import Foundation
 
 extension Antioch {
     
-    /// Get a song from the Apple Music catalog by its id
-    public func catalogSong(forId id: String, completion: DataCompletion<CatalogSong>) {
-        catalogItem(forId: id, ofType: CatalogSong.self, completion: completion)
-    }
-    /// Get a catalog playlist from the Apple Music catalog by its id
-    public func catalogPlaylist(forId id: String, completion: DataCompletion<CatalogPlaylist>) {
-        catalogItem(forId: id, ofType: CatalogPlaylist.self, completion: completion)
-    }
-    
     /// Get an item of type T from the Apple Music Catalog by its id
     public func catalogItem<T: Decodable & CatalogQueryable>(forId id: String, ofType type: T.Type, completion: DataCompletion<T>) {
         let builder: RequestBuilder = RequestBuilder(endPoint: CatalogRouter.getCatalogResource(type: type, id: id, storefront: self.storeFront), method: .get)
