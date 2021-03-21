@@ -1,6 +1,6 @@
 import Foundation
 
-extension Antioch {
+extension AppleMusicKit {
     
     /// Get an item of type T from the Apple Music Catalog by its id
     public func catalogItem<T: Decodable & CatalogQueryable>(forId id: String, ofType type: T.Type, completion: DataCompletion<T>) {

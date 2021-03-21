@@ -1,6 +1,6 @@
 import Foundation
 
-extension Antioch {
+extension AppleMusicKit {
     
     /// Rate an item of type T and pass in the rating to assign it
     public func rate<T: Rateable & Decodable>(item: T, withRating rating: Rating.State, completion: DataCompletion<Rating>) {

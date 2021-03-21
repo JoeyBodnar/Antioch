@@ -1,6 +1,6 @@
 import Foundation
 
-extension Antioch {
+extension AppleMusicKit {
     
     /// search the Apple Music catalog
     public func searchCatalog(forTerm term: String, includingTypes types: [IncludeParameter], withLimit limit: Int, andOffset offset: Int, completion: DataCompletion<CatalogSearchResults>) {

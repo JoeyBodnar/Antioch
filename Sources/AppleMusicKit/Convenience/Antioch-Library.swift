@@ -1,6 +1,6 @@
 import Foundation
 
-extension Antioch {
+extension AppleMusicKit {
     
     /// Get the songs for a library playlsit by passing in the playlist's id. We need this method because
     /// when you retrieve a library playlist, the API does not pass back the songs with it. So we need to retrieve them separately

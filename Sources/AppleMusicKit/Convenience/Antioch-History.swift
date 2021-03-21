@@ -1,6 +1,6 @@
 import Foundation
 
-extension Antioch {
+extension AppleMusicKit {
     
     /// Get the user's last 10 recently played stations
     public func recentStations(completion: DataCompletion<RadioStation>) {

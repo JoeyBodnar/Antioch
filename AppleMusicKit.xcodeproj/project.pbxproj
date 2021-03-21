@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		9F162C122606FE5500389DD6 /* AppleMusicKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F162C112606FE5500389DD6 /* AppleMusicKitTests.swift */; };
 		9F4249DB2535AC5500F065BF /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4249DA2535AC5500F065BF /* RequestInterceptor.swift */; };
 		9F68CFB4260628EA00B6749B /* RequestBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F68CFB3260628EA00B6749B /* RequestBuilderTests.swift */; };
 		9F928ECE2537223100BE60A1 /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F162C112606FE5500389DD6 /* AppleMusicKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicKitTests.swift; sourceTree = "<group>"; };
 		9F4249DA2535AC5500F065BF /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
 		9F68CFB3260628EA00B6749B /* RequestBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilderTests.swift; sourceTree = "<group>"; };
 		9F764EC625359EDB009DF73C /* URLSession+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Protocol.swift"; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				OBJ_57 /* Info.plist */,
 				9F928ED72537235300BE60A1 /* Mocks.swift */,
 				9F68CFB3260628EA00B6749B /* RequestBuilderTests.swift */,
+				9F162C112606FE5500389DD6 /* AppleMusicKitTests.swift */,
 			);
 			name = AppleMusicKitTests;
 			path = Tests/AppleMusicKitTests;
@@ -384,6 +387,7 @@
 			files = (
 				9F68CFB4260628EA00B6749B /* RequestBuilderTests.swift in Sources */,
 				9F928ED82537235300BE60A1 /* Mocks.swift in Sources */,
+				9F162C122606FE5500389DD6 /* AppleMusicKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

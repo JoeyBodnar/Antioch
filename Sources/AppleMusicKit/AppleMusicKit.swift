@@ -1,13 +1,24 @@
 import Foundation
 
 /// The completion to use when expecting a data response (retrieving songs, playlists, rating, albums, etc)
-public typealias DataCompletion<T: Decodable> = ((Result<ResponseRoot<T>, Error>) -> Void)?
+public typealias DataCompletion<T: Decodable> = ((Result<ResponseRoot<T>, AppleMusicKitError>) -> Void)?
 
 /// the completion to use when we dont expect a response body on success, but just a status code (adding items
 /// to playlist, adding to library)
-public typealias VoidResponseCompletion = ((Result<Void, Error>) -> Void)?
+public typealias VoidResponseCompletion = ((Result<Void, AppleMusicKitError>) -> Void)?
 
-public class Antioch {
+public enum AppleMusicKitError: Error {
+    
+    case api(error: AppleMusicError)
+    case offline
+    case timeout
+    case `internal`(error: NSError)
+    case parsing(error: Error, json: String?, statusCode: Int)
+    case malformedRequest
+    case unknown(statusCode: Int)
+}
+
+public class AppleMusicKit {
     
     private let session: URLSessionProtocol
     private let dispatchQueue: DispatchQueue
@@ -41,62 +52,78 @@ public class Antioch {
     
     /// Not all responses (such as deleting ratings) will have a response body. For those requests, we handle the response with this method
     func performRequestforVoidResponse(request: URLRequest?, completion: VoidResponseCompletion) {
-        guard let urlRequest = request else {
+        guard let urlRequest: URLRequest = request else {
+            completion?(.failure(AppleMusicKitError.malformedRequest))
             return
         }
+        
         let interceptedRequest = requestInterceptor.intercept(request: urlRequest)
         
         let task = session.dataTask(with: interceptedRequest) { (data, response, error) in
-            let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 500
-            if statusCode >= 400 {
-                do {
-                    guard let unwrappedData = data else {
-                        let unwrappedError = error ?? UnknownAntiochError(message: "Error retrieving data. Could not retrieve data task error. Status code: \(statusCode)")
-                        completion?(.failure(unwrappedError))
-                        return
+            let statusCode: Int = (response as? HTTPURLResponse)?.statusCode ?? 500
+            
+            if let unwrappedError: Error = error {
+                let nsError: NSError = unwrappedError as NSError
+                if nsError.code == -1009 {
+                    completion?(.failure(AppleMusicKitError.offline))
+                } else {
+                    completion?(.failure(AppleMusicKitError.internal(error: nsError)))
+                }
+            } else if statusCode >= 400 {
+                if let unwrappedData: Data = data {
+                    do {
+                        let decoder: JSONDecoder = JSONDecoder()
+                        let apiError: AppleMusicError = try decoder.decode(AppleMusicError.self, from: unwrappedData)
+                        completion?(.failure(AppleMusicKitError.api(error: apiError)))
+                    } catch let parsingError {
+                        let jsonString: String? = String(data: unwrappedData, encoding: .utf8)
+                        completion?(.failure(AppleMusicKitError.parsing(error: parsingError, json: jsonString, statusCode: statusCode)))
                     }
-                    
-                    let decoder = JSONDecoder()
-                    let error = try decoder.decode(AppleMusicError.self, from: unwrappedData)
-                    completion?(.failure(error))
-                    //completion?(false, error)
-                } catch { }
+                } else {
+                    completion?(.failure(AppleMusicKitError.unknown(statusCode: statusCode)))
+                }
             } else {
                 completion?(.success(()))
             }
         }
+        
         task.resume()
     }
-    
-    func performRequest<T>(request: URLRequest?, forResponseType type: T.Type, completion: ((Result<ResponseRoot<T>, Error>) -> Void)? ) {
-        guard let urlRequest = request else { return }
+     
+    // for requests where we are expecting a JSON response body
+    func performRequest<T>(request: URLRequest?, forResponseType type: T.Type, completion: ((Result<ResponseRoot<T>, AppleMusicKitError>) -> Void)? ) {
+        guard let urlRequest: URLRequest = request else {
+            completion?(.failure(AppleMusicKitError.malformedRequest))
+            return
+        }
         
-        let interceptedRequest = requestInterceptor.intercept(request: urlRequest)
+        let interceptedRequest: URLRequest = requestInterceptor.intercept(request: urlRequest)
         
         let task = session.dataTask(with: interceptedRequest) { (data, response, error) in
-            do {
-                guard let unwrappedData = data else {
-                    let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 500
-                    let unwrappedError = error ?? UnknownAntiochError(message: "Error retrieving data. Could not retrieve data task error. Status code: \(statusCode)")
-                    completion?(.failure(unwrappedError))
-                    return
-                }
-                
-                let decoder = JSONDecoder()
-                let results = try decoder.decode(ResponseRoot<T>.self, from: unwrappedData)
-
-                if let error = results.errors?.first {
-                    completion?(.failure(error))
+            let statusCode: Int = (response as? HTTPURLResponse)?.statusCode ?? 500
+            
+            if let unwrappedError: Error = error {
+                let nsError: NSError = unwrappedError as NSError
+                if nsError.code == -1009 {
+                    completion?(.failure(AppleMusicKitError.offline))
                 } else {
-                    completion?(.success(results))
+                    completion?(.failure(AppleMusicKitError.internal(error: nsError)))
                 }
-            } catch let error {
-                print("Antioch error:: error for request \(String(describing: request)), with error: \(error)")
-                if let unwrappedData = data, let jsonString = String(data: unwrappedData, encoding: .utf8) {
-                    print("json retrieved that failed to parse is: \(jsonString) for url \(String(describing: urlRequest.url?.absoluteString))")
-                }
+            } else if let unwrappedData: Data = data {
+                let decoder: JSONDecoder = JSONDecoder()
                 
-                completion?(.failure(error))
+                do {
+                    if statusCode >= 400 { // attempt to parse error
+                        let apiError: AppleMusicError = try decoder.decode(AppleMusicError.self, from: unwrappedData)
+                        completion?(.failure(AppleMusicKitError.api(error: apiError)))
+                    } else {
+                        let results: ResponseRoot<T> = try decoder.decode(ResponseRoot<T>.self, from: unwrappedData)
+                        completion?(.success(results))
+                    }
+                } catch let parsingError { // will run when both failing to parse the error or failing to parse the result. Send statusCode along with to indicate which one
+                    let jsonString: String? = String(data: unwrappedData, encoding: .utf8)
+                    completion?(.failure(AppleMusicKitError.parsing(error: parsingError, json: jsonString, statusCode: statusCode)))
+                }
             }
         }
         
