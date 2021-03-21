@@ -1,0 +1,7 @@
+{
+    "id": "1",
+    "code":"0211",
+    "status":"404",
+    "title":"Invalid resource",
+    "detail":"The specified resource does not exist"
+}
