@@ -16,7 +16,10 @@ let package = Package(
         .target(
             name: "AppleMusicKit",
             dependencies: [],
-            resources: [.process("Test.json")]
+            resources: [
+                .process("Resources/Mocks/APIError.json"),
+                .process("Resources/Mocks/APIErrorInvalid.json")
+            ]
         ),
         .testTarget(
             name: "AppleMusicKitTests",
