@@ -18,7 +18,9 @@ let package = Package(
             dependencies: [],
             resources: [
                 .process("Resources/Mocks/APIError.json"),
-                .process("Resources/Mocks/APIErrorInvalid.json")
+                .process("Resources/Mocks/APIErrorInvalid.json"),
+                .process("Resources/Mocks/CatalogSong.json"),
+                .process("Resources/Mocks/CatalogSongInvalid.json")
             ]
         ),
         .testTarget(

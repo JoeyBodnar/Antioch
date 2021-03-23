@@ -135,14 +135,113 @@ final class AppleMusicKitTests: XCTestCase {
         
         XCTAssertTrue(successInvoked)
     }
+    
+    func testPerformRequestNilRequest() {
+        let mockSession: MockURLSession = MockURLSession()
+        let amKit = AppleMusicKit(session: mockSession, dispatchQueue: .main)
+        
+        
+        mockSession.response = HTTPURLResponse(url: URL(string: "www.apple.com")!, statusCode: 204, httpVersion: nil, headerFields: nil)
+        var isMalformedRequest: Bool = false
+        amKit.performRequest(request: nil, forResponseType: String.self) { (result: Result<ResponseRoot<String>, AppleMusicKitError>) in
+            switch result {
+            case .success: break
+            case .failure(let error):
+                switch error {
+                case .malformedRequest: isMalformedRequest = true
+                default: break
+                }
+            }
+        }
+        
+        XCTAssertTrue(isMalformedRequest)
+    }
+    
+    func testPerformRequestForCatalogSong() {
+        let mockSession: MockURLSession = MockURLSession()
+        let amKit = AppleMusicKit(session: mockSession, dispatchQueue: .main)
+        
+        let urlString: String = "https://api.music.apple.com/v1/catalog/us/songs/900032829"
+        mockSession.response = HTTPURLResponse(url: URL(string: urlString)!, statusCode: 204, httpVersion: nil, headerFields: nil)
+        let mockRequest: URLRequest = URLRequest(url: URL(string: urlString)!)
+        
+        let fileUrlString: String? = Bundle.module.path(forResource: "CatalogSong", ofType: "json")
+        let fileUrl: URL = URL(fileURLWithPath: fileUrlString!)
+        let data: Data = try! Data(contentsOf: fileUrl)
+        mockSession.data = data
+        
+        var catalogSong: CatalogSong? = nil
+        amKit.performRequest(request: mockRequest, forResponseType: CatalogSong.self) { (result: Result<ResponseRoot<CatalogSong>, AppleMusicKitError>) in
+            switch result {
+            case .success(let responseRoot):
+                catalogSong = responseRoot.data?.first
+            case .failure: break
+            }
+        }
+        
+        XCTAssertNotNil(catalogSong)
+        XCTAssertEqual(catalogSong?.id, "900032829")
+        XCTAssertEqual(catalogSong?.attributes?.name, "Something For the Pain")
+    }
+    
+    func testPerformRequestForCatalogSongParsingError() {
+        let mockSession: MockURLSession = MockURLSession()
+        let amKit = AppleMusicKit(session: mockSession, dispatchQueue: .main)
+        
+        let urlString: String = "https://api.music.apple.com/v1/catalog/us/songs/900032829"
+        mockSession.response = HTTPURLResponse(url: URL(string: urlString)!, statusCode: 204, httpVersion: nil, headerFields: nil)
+        let mockRequest: URLRequest = URLRequest(url: URL(string: urlString)!)
+        
+        let fileUrlString: String? = Bundle.module.path(forResource: "CatalogSongInvalid", ofType: "json")
+        let fileUrl: URL = URL(fileURLWithPath: fileUrlString!)
+        let data: Data = try! Data(contentsOf: fileUrl)
+        mockSession.data = data
+        
+        var catalogSong: CatalogSong? = nil
+        var isParsingError: Bool = false
+        
+        amKit.performRequest(request: mockRequest, forResponseType: CatalogSong.self) { (result: Result<ResponseRoot<CatalogSong>, AppleMusicKitError>) in
+            switch result {
+            case .success(let responseRoot):
+                catalogSong = responseRoot.data?.first
+            case .failure(let error):
+                switch error {
+                case .parsing: isParsingError = true
+                default: break
+                }
+            }
+        }
+        
+        XCTAssertNil(catalogSong)
+        XCTAssertTrue(isParsingError)
+    }
+    
+    func testPerformRequestOfflineError() {
+        let mockSession: MockURLSession = MockURLSession()
+        let amKit = AppleMusicKit(session: mockSession, dispatchQueue: .main)
+        
+        
+        mockSession.response = HTTPURLResponse(url: URL(string: "www.apple.com")!, statusCode: 400, httpVersion: nil, headerFields: nil)
+        mockSession.error = NSError(domain: "com.apple.urlsession", code: -1009, userInfo: nil)
+        let mockRequest: URLRequest = URLRequest(url: URL(string: "www.apple.com")!)
+        
+        let fileUrlString: String? = Bundle.module.path(forResource: "CatalogSong", ofType: "json")
+        let fileUrl: URL = URL(fileURLWithPath: fileUrlString!)
+        let data: Data = try! Data(contentsOf: fileUrl)
+        mockSession.data = data
+        
+        var isOfflineError: Bool = false
+        amKit.performRequest(request: mockRequest, forResponseType: CatalogSong.self) { (result: Result<ResponseRoot<CatalogSong>, AppleMusicKitError>) in
+            switch result {
+            case .success: break
+            case .failure(let error):
+                switch error {
+                case .offline: isOfflineError = true
+                default: break
+                }
+            }
+        }
+        
+        XCTAssertTrue(isOfflineError)
+    }
 }
-
-private let errorJSON = """
-{
-    "id": "1".
-    "code": "002",
-    "status": 404,
-    "title": "Invalid resource",
-    "detail": "Resource not found"
-}
-"""
