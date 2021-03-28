@@ -37,6 +37,11 @@ extension AppleMusicKit {
         performRequest(request: builder.urlRequest, forResponseType: type, completion: completion)
     }
     
+    public func libraryItems<T: Decodable & LibraryQueryable>(forIds ids: [String], ofType type: T.Type, completion: DataCompletion<T>) {
+        let builder: RequestBuilder = RequestBuilder(endPoint: LibraryRouter.getMultipleLibraryResources(type, ids), method: .get)
+        performRequest(request: builder.urlRequest, forResponseType: type, completion: completion)
+    }
+    
     /// Get all library items of type T. Max and default limit is 100.
     public func allLibraryItems<T: Decodable & LibraryQueryable>(ofType type: T.Type, withLimit limit: Int, andOffset offset: Int, completion: DataCompletion<T>) {
         let builder: RequestBuilder = RequestBuilder(endPoint: LibraryRouter.getAllLibrayResources(type, limit, offset), method: .get)
