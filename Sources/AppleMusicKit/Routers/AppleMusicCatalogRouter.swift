@@ -13,17 +13,17 @@ public enum CatalogRouter: Provider {
     public var path: String {
         switch self {
         case .getCatalogResource(let resource, let id, let storefront):
-            return "\(storefront)/\(baseURL)\(getResourcePath(for: resource))/\(id)"
+            return "\(baseURL)/\(storefront)/\(getResourcePath(for: resource))/\(id)"
         case .getMultipleCatalogResources(let resource, let ids, let storefront):
             let joinedIds = ids.joined(separator: ",") // of syntax id1,id2,id3 etc
-            return "\(storefront)/\(baseURL)\(getResourcePath(for: resource))?ids=\(joinedIds)"
+            return "\(baseURL)/\(storefront)/\(getResourcePath(for: resource))?ids=\(joinedIds)"
         case .charts(let types, let limit, let storeFront):
             let allTypes = types.asString()
             let base = "\(RoutingConstants.appleMusicBaseURL)/catalog/\(storeFront)/"
             return "\(base)charts?types=\(allTypes)&limit=\(limit)"
         case .chartsForGenre(let genre, let types, let limit, let storefront):
             let types = types.asString()
-            return "\(storefront)/\(baseURL)charts?types=\(types)&genre=\(genre.id)&limit=\(limit)"
+            return "\(baseURL)/\(storefront)/charts?types=\(types)&genre=\(genre.id)&limit=\(limit)"
         }
     }
     
