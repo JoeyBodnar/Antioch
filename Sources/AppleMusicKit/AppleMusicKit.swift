@@ -59,31 +59,34 @@ public class AppleMusicKit {
         
         let interceptedRequest = requestInterceptor.intercept(request: urlRequest)
         
-        let task = session.dataTask(with: interceptedRequest) { (data, response, error) in
+        let task = session.dataTask(with: interceptedRequest) { [weak self] (data, response, error) in
+            guard let self = self else { return }
             let statusCode: Int = (response as? HTTPURLResponse)?.statusCode ?? 500
             
-            if let unwrappedError: Error = error {
-                let nsError: NSError = unwrappedError as NSError
-                if nsError.code == -1009 {
-                    completion?(.failure(AppleMusicKitError.offline))
-                } else {
-                    completion?(.failure(AppleMusicKitError.internal(error: nsError)))
-                }
-            } else if statusCode >= 400 {
-                if let unwrappedData: Data = data {
-                    do {
-                        let decoder: JSONDecoder = JSONDecoder()
-                        let apiError: AppleMusicError = try decoder.decode(AppleMusicError.self, from: unwrappedData)
-                        completion?(.failure(AppleMusicKitError.api(error: apiError)))
-                    } catch let parsingError {
-                        let jsonString: String? = String(data: unwrappedData, encoding: .utf8)
-                        completion?(.failure(AppleMusicKitError.parsing(error: parsingError, json: jsonString, statusCode: statusCode)))
+            self.dispatchQueue.async {
+                if let unwrappedError: Error = error {
+                    let nsError: NSError = unwrappedError as NSError
+                    if nsError.code == -1009 {
+                        completion?(.failure(AppleMusicKitError.offline))
+                    } else {
+                        completion?(.failure(AppleMusicKitError.internal(error: nsError)))
+                    }
+                } else if statusCode >= 400 {
+                    if let unwrappedData: Data = data {
+                        do {
+                            let decoder: JSONDecoder = JSONDecoder()
+                            let apiError: AppleMusicError = try decoder.decode(AppleMusicError.self, from: unwrappedData)
+                            completion?(.failure(AppleMusicKitError.api(error: apiError)))
+                        } catch let parsingError {
+                            let jsonString: String? = String(data: unwrappedData, encoding: .utf8)
+                            completion?(.failure(AppleMusicKitError.parsing(error: parsingError, json: jsonString, statusCode: statusCode)))
+                        }
+                    } else {
+                        completion?(.failure(AppleMusicKitError.unknown(statusCode: statusCode)))
                     }
                 } else {
-                    completion?(.failure(AppleMusicKitError.unknown(statusCode: statusCode)))
+                    completion?(.success(()))
                 }
-            } else {
-                completion?(.success(()))
             }
         }
         
@@ -99,30 +102,33 @@ public class AppleMusicKit {
         
         let interceptedRequest: URLRequest = requestInterceptor.intercept(request: urlRequest)
         
-        let task = session.dataTask(with: interceptedRequest) { (data, response, error) in
+        let task = session.dataTask(with: interceptedRequest) { [weak self] (data, response, error) in
+            guard let self = self else { return }
             let statusCode: Int = (response as? HTTPURLResponse)?.statusCode ?? 500
             
-            if let unwrappedError: Error = error {
-                let nsError: NSError = unwrappedError as NSError
-                if nsError.code == -1009 {
-                    completion?(.failure(AppleMusicKitError.offline))
-                } else {
-                    completion?(.failure(AppleMusicKitError.internal(error: nsError)))
-                }
-            } else if let unwrappedData: Data = data {
-                let decoder: JSONDecoder = JSONDecoder()
-                
-                do {
-                    if statusCode >= 400 { // attempt to parse error
-                        let apiError: AppleMusicError = try decoder.decode(AppleMusicError.self, from: unwrappedData)
-                        completion?(.failure(AppleMusicKitError.api(error: apiError)))
+            self.dispatchQueue.async {
+                if let unwrappedError: Error = error {
+                    let nsError: NSError = unwrappedError as NSError
+                    if nsError.code == -1009 {
+                        completion?(.failure(AppleMusicKitError.offline))
                     } else {
-                        let results: ResponseRoot<T> = try decoder.decode(ResponseRoot<T>.self, from: unwrappedData)
-                        completion?(.success(results))
+                        completion?(.failure(AppleMusicKitError.internal(error: nsError)))
                     }
-                } catch let parsingError { // will run when both failing to parse the error or failing to parse the result. Send statusCode along with to indicate which one
-                    let jsonString: String? = String(data: unwrappedData, encoding: .utf8)
-                    completion?(.failure(AppleMusicKitError.parsing(error: parsingError, json: jsonString, statusCode: statusCode)))
+                } else if let unwrappedData: Data = data {
+                    let decoder: JSONDecoder = JSONDecoder()
+                    
+                    do {
+                        if statusCode >= 400 { // attempt to parse error
+                            let apiError: AppleMusicError = try decoder.decode(AppleMusicError.self, from: unwrappedData)
+                            completion?(.failure(AppleMusicKitError.api(error: apiError)))
+                        } else {
+                            let results: ResponseRoot<T> = try decoder.decode(ResponseRoot<T>.self, from: unwrappedData)
+                            completion?(.success(results))
+                        }
+                    } catch let parsingError { // will run when both failing to parse the error or failing to parse the result. Send statusCode along with to indicate which one
+                        let jsonString: String? = String(data: unwrappedData, encoding: .utf8)
+                        completion?(.failure(AppleMusicKitError.parsing(error: parsingError, json: jsonString, statusCode: statusCode)))
+                    }
                 }
             }
         }
