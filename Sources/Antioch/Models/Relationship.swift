@@ -2,7 +2,7 @@ import Foundation
 
 // https://developer.apple.com/documentation/applemusicapi/relationship
 public class Relationship<T: Decodable>: Decodable {
-    public let data: [T]
+    public let data: [T]?
     public let href: String?
     public let next: String?
 }

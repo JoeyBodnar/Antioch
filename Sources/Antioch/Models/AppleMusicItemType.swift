@@ -55,6 +55,8 @@ public enum AppleMusicItemType: String, Codable {
     case libraryAlbums = "library-albums"
     case libraryPlaylists = "library-playlists"
     
+    case socialProfiles = "social-profiles"
+    
     public enum Library: String {
         case songs = "songs"
         case albums = "albums"
