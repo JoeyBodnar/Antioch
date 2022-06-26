@@ -39,6 +39,7 @@ public struct AddableItem {
 
 public enum AppleMusicItemType: String, Codable {
     case songs = "songs"
+    case song = "song"
     case artists = "artists"
     case albums = "albums"
     case playlists = "playlists"
