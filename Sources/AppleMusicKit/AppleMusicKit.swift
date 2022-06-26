@@ -46,7 +46,7 @@ public class AppleMusicKit {
     }
     
     /// The storefront for user-specific requests. Default is "us"
-    private(set) var storeFront = "us"
+    public var storeFront = "us"
     
     public var authenticationHeader: String? {
         didSet {
