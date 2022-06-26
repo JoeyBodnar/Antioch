@@ -16,6 +16,18 @@ public enum AppleMusicKitError: Error {
     case parsing(error: Error, json: String?, statusCode: Int)
     case malformedRequest
     case unknown(statusCode: Int)
+    
+    var detail: String? {
+        switch self {
+        case .api(let error): return error.detail
+        case .offline: return "Offline"
+        case .timeout: return "Timeout"
+        case .internal(let error): return "Internal error: \(error.localizedDescription)"
+        case .parsing: return "Parsing error"
+        case .malformedRequest: return "Malformed request"
+        case .unknown(let code): return "Unknown error: status code: \(code)"
+        }
+    }
 }
 
 public class AppleMusicKit {
