@@ -17,7 +17,7 @@ public enum AppleMusicKitError: Error {
     case malformedRequest
     case unknown(statusCode: Int)
     
-    var detail: String? {
+    public var detail: String? {
         switch self {
         case .api(let error): return error.detail
         case .offline: return "Offline"
