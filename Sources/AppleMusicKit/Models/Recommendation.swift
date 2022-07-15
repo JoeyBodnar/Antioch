@@ -72,7 +72,14 @@ public final class RecommendationRelationShipContents: Decodable {
                     song.attributes = attributes
                     items.append(song)
                 } catch { } // do nothing. We just won't append this to the items then
-                
+            case AppleMusicItemType.stations.rawValue:
+                do {
+                    let id = try itemContainer.decode(String.self, forKey: .id)
+                    let attributes: RadioStationAttributes = try itemContainer.decode(RadioStationAttributes.self, forKey: .attributes)
+                    let station: RadioStation = RadioStation(id: id, type: .stations)
+                    station.attributes = attributes
+                    items.append(station)
+                } catch { } // do nothing. We just won't append this to the items then
             default:
                 print("test:: it is the default: \(type)")
             }
