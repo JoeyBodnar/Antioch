@@ -74,7 +74,7 @@ public final class RecommendationRelationShipContents: Decodable {
                 } catch { } // do nothing. We just won't append this to the items then
                 
             default:
-                print("test:: it is the default")
+                print("test:: it is the default: \(type)")
             }
         }
 
