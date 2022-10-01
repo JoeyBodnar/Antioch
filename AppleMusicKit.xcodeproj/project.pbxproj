@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		9F32098428DF4E3100F7CAAD /* AppleMusicKitLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F32098328DF4E3100F7CAAD /* AppleMusicKitLibraryTests.swift */; };
+		9F63868628E82F2600C80E13 /* RecentTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F63868528E82F2600C80E13 /* RecentTrack.swift */; };
 		OBJ_100 /* SearchHints.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* SearchHints.swift */; };
 		OBJ_101 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* SearchResults.swift */; };
 		OBJ_102 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* RequestBuilder.swift */; };
@@ -88,6 +90,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F32098328DF4E3100F7CAAD /* AppleMusicKitLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicKitLibraryTests.swift; sourceTree = "<group>"; };
+		9F63868528E82F2600C80E13 /* RecentTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTrack.swift; sourceTree = "<group>"; };
 		"AppleMusicKit::AppleMusicKit::Product" /* AppleMusicKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppleMusicKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"AppleMusicKit::AppleMusicKitTests::Product" /* AppleMusicKitTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleMusicKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* AppleMusicKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleMusicKit.h; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 				OBJ_41 /* ResponseRoot.swift */,
 				OBJ_42 /* SearchHints.swift */,
 				OBJ_43 /* SearchResults.swift */,
+				9F63868528E82F2600C80E13 /* RecentTrack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -216,7 +221,7 @@
 			path = Routers;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -225,7 +230,6 @@
 				OBJ_63 /* Products */,
 				OBJ_66 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_51 /* Utils */ = {
@@ -255,6 +259,7 @@
 				OBJ_60 /* AppleMusicKitTests.swift */,
 				OBJ_61 /* Mocks.swift */,
 				OBJ_62 /* RequestBuilderTests.swift */,
+				9F32098328DF4E3100F7CAAD /* AppleMusicKitLibraryTests.swift */,
 			);
 			name = AppleMusicKitTests;
 			path = Tests/AppleMusicKitTests;
@@ -360,7 +365,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_63 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -387,6 +392,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_131 /* AppleMusicKitTests.swift in Sources */,
+				9F32098428DF4E3100F7CAAD /* AppleMusicKitLibraryTests.swift in Sources */,
 				OBJ_132 /* Mocks.swift in Sources */,
 				OBJ_133 /* RequestBuilderTests.swift in Sources */,
 			);
@@ -400,6 +406,7 @@
 				OBJ_73 /* AppleMusicKit-Catalog.swift in Sources */,
 				OBJ_74 /* AppleMusicKit-History.swift in Sources */,
 				OBJ_75 /* AppleMusicKit-Library.swift in Sources */,
+				9F63868628E82F2600C80E13 /* RecentTrack.swift in Sources */,
 				OBJ_76 /* AppleMusicKit-Ratings.swift in Sources */,
 				OBJ_77 /* AppleMusicKit-Search.swift in Sources */,
 				OBJ_78 /* AppleMusicError.swift in Sources */,
