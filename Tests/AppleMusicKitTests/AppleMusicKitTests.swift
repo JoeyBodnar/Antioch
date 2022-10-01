@@ -10,7 +10,7 @@ import XCTest
 
 final class AppleMusicKitTests: XCTestCase {
     
-    func testConfigure() {
+   /* func testConfigure() {
         let amKit = AppleMusicKit(session: MockURLSession(), dispatchQueue: .main)
         
         amKit.configure(storeFront: "de", authenticationHeader: "mock-jwt")
@@ -243,5 +243,5 @@ final class AppleMusicKitTests: XCTestCase {
         }
         
         XCTAssertTrue(isOfflineError)
-    }
+    }*/
 }
