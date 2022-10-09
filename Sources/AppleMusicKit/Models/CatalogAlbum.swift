@@ -20,9 +20,9 @@ extension CatalogAlbum: CatalogQueryable { }
 extension CatalogAlbum: Rateable { }
 
 public final class CatalogAlbumAttributes: Decodable {
-    public let artistName: String
+    public let artistName: String?
     public var artwork: Artwork?
-    public let copyright: String
+    public let copyright: String?
     public var editorialNotes: EditorialNotes?
     public var genreNames: [String]?
     public var isComplete: Bool?
@@ -30,10 +30,10 @@ public final class CatalogAlbumAttributes: Decodable {
     public var isSingle: Bool?
     public let name: String
     public var playParams: PlayParameters
-    public let recordLabel: String
+    public let recordLabel: String?
     public let releaseDate: String?
-    public let trackCount: Int
-    public let url: String
+    public let trackCount: Int?
+    public let url: String?
 }
 
 public final class CatalogAlbumRelationships: Decodable {
