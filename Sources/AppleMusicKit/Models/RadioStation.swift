@@ -19,7 +19,7 @@ public final class RadioStationAttributes: Decodable {
     public var artwork: Artwork?
     public var editorialNotes: EditorialNotes?
     public let isLive: Bool
-    public let name: String
-    public let playParams: PlayParameters
+    public let name: String?
+    public let playParams: PlayParameters?
     public let url: String
 }

@@ -28,8 +28,8 @@ public final class CatalogAlbumAttributes: Decodable {
     public var isComplete: Bool?
     public var isMasteredForItunes: Bool?
     public var isSingle: Bool?
-    public let name: String
-    public var playParams: PlayParameters
+    public let name: String?
+    public var playParams: PlayParameters?
     public let recordLabel: String?
     public let releaseDate: String?
     public let trackCount: Int?

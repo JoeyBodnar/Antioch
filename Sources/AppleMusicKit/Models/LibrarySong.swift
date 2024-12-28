@@ -19,8 +19,8 @@ public final class LibrarySongAttributes: Decodable {
     public var albumName: String?
     public var artistName: String?
     public var artwork: Artwork?
-    public let name: String
-    public let playParams: PlayParameters
-    public let trackNumber: Int
+    public let name: String?
+    public let playParams: PlayParameters?
+    public let trackNumber: Int?
 }
 

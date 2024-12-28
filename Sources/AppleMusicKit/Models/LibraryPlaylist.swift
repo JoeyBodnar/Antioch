@@ -19,7 +19,7 @@ public final class LibraryPlaylistAttributes: Decodable {
     public var artwork: Artwork?
     public let canEdit: Bool
     public let name: String
-    public let playParams: PlayParameters
+    public let playParams: PlayParameters?
     public var globalID: String?
 }
 

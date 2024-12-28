@@ -14,8 +14,8 @@ public final class LibraryAlbum: AppleMusicResource<LibraryAlbumAttributes, Libr
 public final class LibraryAlbumAttributes: Decodable {
     public let artistName: String
     public var artwork: Artwork?
-    public let name: String
-    public var playParams: PlayParameters
+    public let name: String?
+    public var playParams: PlayParameters?
     public let trackCount: Int
 }
 
