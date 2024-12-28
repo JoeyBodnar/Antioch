@@ -71,9 +71,18 @@ public class AppleMusicKit {
         
         let interceptedRequest = requestInterceptor.intercept(request: urlRequest)
         
+        print("AppleMusicKit sending request url string: \(interceptedRequest.url?.absoluteString ?? "")")
+        
         let task = session.dataTask(with: interceptedRequest) { [weak self] (data, response, error) in
             guard let self = self else { return }
             let statusCode: Int = (response as? HTTPURLResponse)?.statusCode ?? 500
+            
+            let urlOrigin: String = ((response as? HTTPURLResponse)?.url?.absoluteString) ?? ""
+            print("AppleMusicKit response status code for url \(urlOrigin) was: \(statusCode)")
+            if let dataUnwrapped = data, let responseJSONString = NSString(data: dataUnwrapped, encoding: String.Encoding.utf8.rawValue) {
+                
+                print("AppleMusicKit response for url \(urlOrigin) was: \(responseJSONString)")
+            }
             
             self.dispatchQueue.async {
                 if let unwrappedError: Error = error {
@@ -90,6 +99,7 @@ public class AppleMusicKit {
                             let apiError: AppleMusicError = try decoder.decode(AppleMusicError.self, from: unwrappedData)
                             completion?(.failure(AppleMusicKitError.api(error: apiError)))
                         } catch let parsingError {
+                            print("AppleMusicKit error parsing, \(parsingError)")
                             let jsonString: String? = String(data: unwrappedData, encoding: .utf8)
                             completion?(.failure(AppleMusicKitError.parsing(error: parsingError, json: jsonString, statusCode: statusCode)))
                         }
