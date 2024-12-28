@@ -114,9 +114,21 @@ public class AppleMusicKit {
         
         let interceptedRequest: URLRequest = requestInterceptor.intercept(request: urlRequest)
         
+        #if DEBUG
+        print("AppleMusicKit sending request url string: \(interceptedRequest.url?.absoluteString ?? "")")
+        #endif
         let task = session.dataTask(with: interceptedRequest) { [weak self] (data, response, error) in
             guard let self = self else { return }
             let statusCode: Int = (response as? HTTPURLResponse)?.statusCode ?? 500
+            
+            #if DEBUG
+            let urlOrigin: String = ((response as? HTTPURLResponse)?.url?.absoluteString) ?? ""
+            print("AppleMusicKit response status code for url \(urlOrigin) was: \(statusCode)")
+            if let dataUnwrapped = data, let responseJSONString = NSString(data: dataUnwrapped, encoding: String.Encoding.utf8.rawValue) {
+                
+                print("AppleMusicKit response for url \(urlOrigin) was: \(responseJSONString)")
+            }
+            #endif
             
             self.dispatchQueue.async {
                 if let unwrappedError: Error = error {
@@ -138,7 +150,9 @@ public class AppleMusicKit {
                             completion?(.success(results))
                         }
                     } catch let parsingError { // will run when both failing to parse the error or failing to parse the result. Send statusCode along with to indicate which one
-                        print("test:: error is \(parsingError)")
+                        #if DEBUG
+                        print("AppleMusicKit error parsing, \(parsingError)")
+                        #endif
                         let jsonString: String? = String(data: unwrappedData, encoding: .utf8)
                         completion?(.failure(AppleMusicKitError.parsing(error: parsingError, json: jsonString, statusCode: statusCode)))
                     }
