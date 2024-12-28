@@ -14,7 +14,7 @@ public final class Recommendation: AppleMusicResource<RecommendationAttributes, 
 public final class RecommendationAttributes: Decodable {
     public let isGroupRecommendation: Bool
     public var title: RecommendationTitle
-    public var reason: String?
+    //public var reason: String?
     public let resourceTypes: [String]
     public var nextUpdateDate: String?
 }
