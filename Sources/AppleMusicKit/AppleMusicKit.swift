@@ -138,6 +138,7 @@ public class AppleMusicKit {
                             completion?(.success(results))
                         }
                     } catch let parsingError { // will run when both failing to parse the error or failing to parse the result. Send statusCode along with to indicate which one
+                        print("test:: error is \(parsingError)")
                         let jsonString: String? = String(data: unwrappedData, encoding: .utf8)
                         completion?(.failure(AppleMusicKitError.parsing(error: parsingError, json: jsonString, statusCode: statusCode)))
                     }
